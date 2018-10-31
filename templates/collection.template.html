@@ -1,0 +1,14 @@
+<#list laws as law>
+	<h2>
+		《${law.name}》
+		<#if law.version gt 0>（${law.version}）</#if> 
+		<#if law.category??><span class="badge">${law.category}</span></#if>
+	</h2>
+	<div class="small">
+		<#if law.histories??>
+			<#list law.histories as history>
+				<div>${history}</div>
+			</#list>
+		</#if>
+	</div>
+</#list>
