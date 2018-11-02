@@ -1,7 +1,5 @@
 package model;
 
-import java.sql.SQLTransactionRollbackException;
-
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -17,9 +15,12 @@ public class Amendment extends History{
 		sb.append("根据");
 		sb.append(createDate);
 		sb.append(organization);
-		sb.append("通过的《");
-		sb.append(notice);
-		sb.append("》修正");
+		if(notice != null) {
+			sb.append("通过的《");
+			sb.append(notice);
+			sb.append("》");
+		}
+		sb.append("修正");
 		if(id != null || executeDate != null) {
 			sb.append("（");
 			sb.append(id);
