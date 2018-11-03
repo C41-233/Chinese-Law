@@ -5,10 +5,16 @@ import java.util.List;
 
 public class ArchieveNode {
 
-	public String name;
+	public final ArchieveNode parent;
+	public final String name;
 	
-	public List<ArchieveNode> childs = new ArrayList<>();
-	public List<ArchieveCollection> documents = new ArrayList<>();
+	public final List<ArchieveNode> childs = new ArrayList<>();
+	public final List<ArchieveCollection> documents = new ArrayList<>();
+
+	public ArchieveNode(ArchieveNode parent, String name) {
+		this.parent = parent;
+		this.name = name;
+	}
 	
 	@Override
 	public String toString() {
@@ -26,6 +32,13 @@ public class ArchieveNode {
 			sb.append("\n");
 			child.toString(sb, padding + "\t");
 		}
+	}
+
+	public String getPath() {
+		if(parent != null) {
+			return parent + "/" + name;
+		}
+		return name;
 	}
 	
 }

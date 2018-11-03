@@ -16,5 +16,11 @@ public class Document {
 	@XmlElementWrapper(name = "histories")
 	@XmlAnyElement(lax = true)
 	public List<History> histories;
+
+	public void valid() {
+		for (History history : histories) {
+			history.valid();
+		}
+	}
 	
 }

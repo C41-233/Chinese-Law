@@ -13,10 +13,17 @@ public class Revision extends History{
 		sb.append("通过");
 		if(id != null || executeDate != null) {
 			sb.append("（");
-			sb.append(id);
-			sb.append("，自");
-			sb.append(executeDate);
-			sb.append("起施行");
+			if(id != null) {
+				sb.append(id);
+			}
+			if(id != null && executeDate != null) {
+				sb.append("，");
+			}
+			if(executeDate != null) {
+				sb.append("自");
+				sb.append(executeDate);
+				sb.append("起施行");
+			}
 			sb.append("）");
 		}
 		return sb.toString();

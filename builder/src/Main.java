@@ -35,7 +35,7 @@ public class Main {
 			}
 			
 			HashMap<String, Object> arguments = new HashMap<>();
-			arguments.put("laws", collection.laws);
+			arguments.put("page", collection);
 			
 			File templateCollection = new File(TemplateInputPath, "collection.template.html");
 			String content = TemplateBuilder.generate(templateCollection, arguments);

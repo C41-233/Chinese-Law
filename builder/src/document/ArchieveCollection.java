@@ -5,9 +5,18 @@ import java.util.List;
 
 public class ArchieveCollection {
 
-	public String name;
-	public String href;
+	public final ArchieveNode parent;
+	public final String name;
 	
-	public List<Law> laws = new ArrayList<>();
+	public final List<Law> laws = new ArrayList<>();
+	
+	public ArchieveCollection(ArchieveNode parent, String name) {
+		this.parent = parent;
+		this.name = name;
+	}
+	
+	public String getPath() {
+		return parent.getPath() + "/" + name;
+	}
 	
 }

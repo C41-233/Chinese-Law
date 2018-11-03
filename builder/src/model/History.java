@@ -15,4 +15,7 @@ public abstract class History {
 
 	@XmlElement(name = "id")
 	public String id;
+
+	public void valid() {
+	}
 }

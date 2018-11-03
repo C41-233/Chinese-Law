@@ -1,4 +1,16 @@
-<#list laws as law>
+<#macro path node>
+	<#if node.parent??>
+		<@path node.parent/>
+	</#if>
+	<li>${node.name}</li>
+</#macro>
+
+<ol class="breadcrumb">
+	<@path page.parent/>
+	<li class="active">${page.name}</li>
+</ol>
+
+<#list page.laws as law>
 	<h2>
 		《${law.name}》
 		<#if law.version gt 0>（${law.version}）</#if> 

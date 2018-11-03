@@ -23,13 +23,30 @@ public class Amendment extends History{
 		sb.append("修正");
 		if(id != null || executeDate != null) {
 			sb.append("（");
-			sb.append(id);
-			sb.append("，自");
-			sb.append(executeDate);
-			sb.append("起施行");
+			if(id != null) {
+				sb.append(id);
+			}
+			if(id != null && executeDate != null) {
+				sb.append("，");
+			}
+			if(executeDate != null) {
+				sb.append("自");
+				sb.append(executeDate);
+				sb.append("起施行");
+			}
 			sb.append("）");
 		}
 		return sb.toString();
+	}
+	
+	@Override
+	public void valid() {
+		super.valid();
+		if(notice != null) {
+			if(notice.contains("<") || notice.contains(">")) {
+				throw new ArchieveException("notice中包含错误的符号");
+			}
+		}
 	}
 	
 }

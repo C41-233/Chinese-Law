@@ -23,7 +23,7 @@ public class Archieve {
 	
 	public Archieve(File root) throws IOException, JAXBException {
 		for(File file : root.listFiles()) {
-			ArchieveNode node = createArchieveNode(file);
+			ArchieveNode node = createArchieveNode(null, file);
 			baseNodes.add(node);
 			System.out.println(node);
 		}
@@ -41,16 +41,16 @@ public class Archieve {
 		return collections;
 	}
 	
-	private ArchieveNode createArchieveNode(File file) throws IOException, JAXBException{
-		ArchieveNode node = new ArchieveNode();
-		node.name = file.getName();
+	private ArchieveNode createArchieveNode(ArchieveNode parent, File file) throws IOException, JAXBException{
+		String name = file.getName();
+		ArchieveNode node = new ArchieveNode(parent, name);
 		
 		for(File child : file.listFiles()) {
 			if(isDocumentNode(child)) {
-				node.documents.add(createArchieveCollection(child));
+				node.documents.add(createArchieveCollection(node, child));
 			}
 			else {
-				node.childs.add(createArchieveNode(child));
+				node.childs.add(createArchieveNode(node, child));
 			}
 		}
 		node.documents.sort((d1, d2) -> d1.name.compareTo(d2.name));
@@ -58,9 +58,9 @@ public class Archieve {
 		return node;
 	}
 	
-	private ArchieveCollection createArchieveCollection(File file) throws IOException, JAXBException {
-		ArchieveCollection collection = new ArchieveCollection();
-		collection.name = file.getName();
+	private ArchieveCollection createArchieveCollection(ArchieveNode parent, File file) throws IOException, JAXBException {
+		String name = file.getName();
+		ArchieveCollection collection = new ArchieveCollection(parent, name);
 		for(File documentFile : file.listFiles()) {
 			String content = FileUtils.readFileToString(documentFile, "utf-8");
 			Law law = new Law();
@@ -75,6 +75,7 @@ public class Archieve {
 			collection.laws.add(law);
 		}
 		collections.add(collection);
+
 		return collection;
 	}
 

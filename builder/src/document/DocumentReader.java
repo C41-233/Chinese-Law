@@ -7,6 +7,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
 import model.Amendment;
+import model.ArchieveException;
 import model.Document;
 import model.Revision;
 
@@ -25,7 +26,14 @@ public class DocumentReader {
 	}
 	
 	public static Document read(File file) throws JAXBException {
-		return (Document) unmarshaller.unmarshal(file);
+		try {
+			Document document = (Document) unmarshaller.unmarshal(file);
+			document.valid();
+			return document;
+		}
+		catch (ArchieveException e) {
+			throw new ArchieveException(e, "½âÎö%s³öÏÖ´íÎó", file.getAbsolutePath());
+		}
 	}
 	
 }
