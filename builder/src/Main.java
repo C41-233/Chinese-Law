@@ -31,7 +31,7 @@ public class Main {
 		for(ArchieveCollection collection : archieve.getCollections()) {
 			File outputCollection = new File(OutputCollectionRoot, collection.name + ".html");
 			if(outputCollection.exists()) {
-				throw new RuntimeException();
+				throw new RuntimeException("Ãû×ÖÖØ¸´£º" + collection.name);
 			}
 			
 			HashMap<String, Object> arguments = new HashMap<>();
