@@ -19,4 +19,8 @@ public class ArchieveCollection {
 		return parent.getPath() + "/" + name;
 	}
 	
+	public List<ArchieveCollection> getNeighbours(){
+		return parent.documents;
+	}
+	
 }
