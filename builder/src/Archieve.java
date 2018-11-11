@@ -11,6 +11,7 @@ import document.ArchieveCollection;
 import document.ArchieveNode;
 import document.DocumentReader;
 import document.Law;
+import model.ArchieveException;
 import model.Document;
 
 public class Archieve {
@@ -66,6 +67,12 @@ public class Archieve {
 			Law law = new Law();
 			String filename = documentFile.getName();
 			law.name = filename.substring(0, filename.length() - 4);
+			if(law.name.contains("(") || law.name.contains(")")
+					|| law.name.contains(" ")
+					|| law.name.contains("《") || law.name.contains("》")
+			) {
+				throw new ArchieveException("法律名称非法字符：%s", law.name);
+			}
 			if(content.length() > 0) {
 				Document document = DocumentReader.read(documentFile);
 				law.setDocument(document);

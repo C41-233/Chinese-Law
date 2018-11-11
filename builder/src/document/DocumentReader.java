@@ -34,6 +34,6 @@ public class DocumentReader {
 		catch (ArchieveException e) {
 			throw new ArchieveException(e, "½âÎö%s³öÏÖ´íÎó", file.getAbsolutePath());
 		}
-	}
+	}	
 	
 }

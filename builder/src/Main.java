@@ -8,6 +8,7 @@ import org.apache.commons.io.FileUtils;
 
 import document.ArchieveCollection;
 import freemarker.template.TemplateException;
+import model.ArchieveException;
 import template.TemplateBuilder;
 
 public class Main {
@@ -31,7 +32,7 @@ public class Main {
 		for(ArchieveCollection collection : archieve.getCollections()) {
 			File outputCollection = new File(OutputCollectionRoot, collection.name + ".html");
 			if(outputCollection.exists()) {
-				throw new RuntimeException("名字重复：" + collection.name);
+				throw new ArchieveException("名字重复：%s", collection.name);
 			}
 			
 			HashMap<String, Object> arguments = new HashMap<>();
