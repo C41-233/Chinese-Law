@@ -1,8 +1,10 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
+import javax.tools.Diagnostic;
 import javax.xml.bind.JAXBException;
 
 import org.apache.commons.io.FileUtils;
@@ -19,6 +21,7 @@ public class Archieve {
 	private List<ArchieveNode> baseNodes = new ArrayList<>();
 	
 	private List<Law> laws = new ArrayList<>();
+	private HashSet<String> lawNames = new HashSet<>();
 	
 	private List<ArchieveCollection> collections = new ArrayList<>();
 	
@@ -27,6 +30,14 @@ public class Archieve {
 			ArchieveNode node = createArchieveNode(null, file);
 			baseNodes.add(node);
 			System.out.println(node);
+		}
+		
+		//检查deprecated
+		for(Law law : laws) {
+			String document = law.getDeprecatedReplaceDocument();
+			if(document != null && !lawNames.contains(document)) {
+				throw new ArchieveException("《%s》的替代文件《%s》不存在", law.name, document);
+			}
 		}
 	}
 
@@ -79,6 +90,7 @@ public class Archieve {
 				laws.add(law);
 			}
 			laws.add(law);
+			lawNames.add(law.name);
 			collection.laws.add(law);
 		}
 		collections.add(collection);

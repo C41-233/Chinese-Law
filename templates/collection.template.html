@@ -24,7 +24,7 @@
 	</div>
 	<div class="col-lg-10">
 		<#list page.laws as law>
-			<div class="law">
+			<div class="law <#if law.deprecated>deprecated</#if>">
 				<h2>
 					《${law.name}》
 					<#if law.version gt 0>（${law.version}）</#if> 

@@ -17,6 +17,9 @@ public class Document {
 	@XmlAnyElement(lax = true)
 	public List<History> histories;
 
+	@XmlElement(name = "deprecated")
+	public Deprecated deprecated;
+	
 	public void valid() {
 		for (History history : histories) {
 			history.valid();

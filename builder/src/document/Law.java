@@ -40,5 +40,19 @@ public class Law {
 		}
 		return document.histories;
 	}
+
+	public boolean isDeprecated() {
+		if(document == null) {
+			return false;
+		}
+		return document.deprecated != null;
+	}
+	
+	public String getDeprecatedReplaceDocument() {
+		if(document == null || document.deprecated == null) {
+			return null;
+		}
+		return document.deprecated.document;
+	}
 	
 }
