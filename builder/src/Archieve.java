@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-import javax.tools.Diagnostic;
 import javax.xml.bind.JAXBException;
 
 import org.apache.commons.io.FileUtils;
@@ -77,6 +76,9 @@ public class Archieve {
 			String content = FileUtils.readFileToString(documentFile, "utf-8");
 			Law law = new Law();
 			String filename = documentFile.getName();
+			if(!filename.endsWith(".xml")) {
+				throw new ArchieveException("%s 文件名不符合规范", filename);
+			}
 			law.name = filename.substring(0, filename.length() - 4);
 			if(law.name.contains("(") || law.name.contains(")")
 					|| law.name.contains(" ")
