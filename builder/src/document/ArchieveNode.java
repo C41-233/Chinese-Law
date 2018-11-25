@@ -3,7 +3,7 @@ package document;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArchieveNode {
+public class ArchieveNode{
 
 	public final ArchieveNode parent;
 	public final String name;

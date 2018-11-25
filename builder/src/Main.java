@@ -6,6 +6,7 @@ import javax.xml.bind.JAXBException;
 
 import org.apache.commons.io.FileUtils;
 
+import base.Archieve;
 import document.ArchieveCollection;
 import freemarker.template.TemplateException;
 import model.ArchieveException;

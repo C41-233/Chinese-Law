@@ -1,3 +1,4 @@
+package base;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -64,8 +65,8 @@ public class Archieve {
 				node.childs.add(createArchieveNode(node, child));
 			}
 		}
-		node.documents.sort((d1, d2) -> d1.name.compareTo(d2.name));
-		node.childs.sort((c1, c2) -> c1.name.compareTo(c2.name));
+		node.documents.sort(new NameComparator<ArchieveCollection>(d -> d.name));
+		node.childs.sort(new NameComparator<ArchieveNode>(d -> d.name));
 		return node;
 	}
 	
@@ -96,7 +97,7 @@ public class Archieve {
 			collection.laws.add(law);
 		}
 		collections.add(collection);
-
+		collection.laws.sort(new NameComparator<Law>(law -> law.name));
 		return collection;
 	}
 
