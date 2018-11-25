@@ -11,6 +11,7 @@ import org.apache.commons.io.FileUtils;
 
 import document.ArchieveCollection;
 import document.ArchieveNode;
+import document.ArchieveRoot;
 import document.DocumentReader;
 import document.Law;
 import model.ArchieveException;
@@ -18,7 +19,7 @@ import model.Document;
 
 public class Archieve {
 
-	private List<ArchieveNode> baseNodes = new ArrayList<>();
+	private List<ArchieveRoot> rootNodes = new ArrayList<>();
 	
 	private List<Law> laws = new ArrayList<>();
 	private HashSet<String> lawNames = new HashSet<>();
@@ -28,9 +29,13 @@ public class Archieve {
 	
 	public Archieve(File root) throws IOException, JAXBException {
 		for(File file : root.listFiles()) {
-			ArchieveNode node = createArchieveNode(null, file);
-			baseNodes.add(node);
+			ArchieveRoot node = (ArchieveRoot) createArchieveNode(null, file);
+			rootNodes.add(node);
 			System.out.println(node);
+		}
+		
+		for (ArchieveRoot archieveRoot : rootNodes) {
+			archieveRoot.setRoots(rootNodes);
 		}
 		
 		//¼ì²édeprecated
@@ -42,8 +47,8 @@ public class Archieve {
 		}
 	}
 
-	public List<ArchieveNode> getBaseNodes(){
-		return baseNodes;
+	public List<ArchieveRoot> getRootNodes(){
+		return rootNodes;
 	}
 	
 	public List<Law> getLaws(){
@@ -60,7 +65,7 @@ public class Archieve {
 	
 	private ArchieveNode createArchieveNode(ArchieveNode parent, File file) throws IOException, JAXBException{
 		String name = file.getName();
-		ArchieveNode node = new ArchieveNode(parent, name);
+		ArchieveNode node = parent != null ? new ArchieveNode(parent, name) : new ArchieveRoot(name);
 		
 		for(File child : file.listFiles()) {
 			if(isDocumentNode(child)) {
@@ -72,9 +77,7 @@ public class Archieve {
 		}
 		node.documents.sort(new NameComparator<ArchieveCollection>(d -> d.getName()));
 		node.collections.sort(new NameComparator<ArchieveNode>(d -> d.getName()));
-		if(parent != null) {
-			nodes.add(node);
-		}
+		nodes.add(node);
 		return node;
 	}
 	

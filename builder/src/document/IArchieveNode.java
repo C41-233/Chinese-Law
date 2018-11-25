@@ -3,8 +3,6 @@ package document;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory.Default;
-
 public interface IArchieveNode {
 
 	public ArchieveNode getParent();

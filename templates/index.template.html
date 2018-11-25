@@ -5,7 +5,7 @@
 		<a class="dropdown-toggle" data-toggle="dropdown">${node.name}</a>
 		<ul class="dropdown-menu">
 			<#list node.documents as document>
-				<li class="menu"><a class="collection" href="javascript:void(0) " data-href="collections/${document.filename}.html">${document.name}</a></li>
+				<li class="menu"><a class="list-collection" href="javascript:void(0) " data-href="collections/${document.filename}.html">${document.name}</a></li>
 			</#list>
 			<#list node.collections as collection>
 				<@tree collection/>

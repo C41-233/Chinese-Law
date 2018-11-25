@@ -62,7 +62,7 @@ public class Main {
 		
 		File templateIndex = new File(TemplateInputPath, "index.template.html");
 		HashMap<String, Object> vo = new HashMap<>();
-		vo.put("bases", archieve.getBaseNodes());
+		vo.put("bases", archieve.getRootNodes());
 		String content = TemplateBuilder.generate(templateIndex , vo);
 		
 		File outputIndex = new File(OutputRoot, "index.html");
