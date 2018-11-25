@@ -3,10 +3,10 @@ package document;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArchieveCollection{
+public class ArchieveCollection implements IArchieveNode{
 
-	public final ArchieveNode parent;
-	public final String name;
+	private final ArchieveNode parent;
+	private final String name;
 	
 	public final List<Law> laws = new ArrayList<>();
 	
@@ -15,12 +15,14 @@ public class ArchieveCollection{
 		this.name = name;
 	}
 	
-	public String getPath() {
-		return parent.getPath() + "/" + name;
+	@Override
+	public ArchieveNode getParent() {
+		return parent;
 	}
-	
-	public List<ArchieveCollection> getNeighbours(){
-		return parent.documents;
+
+	@Override
+	public String getName() {
+		return name;
 	}
 	
 }

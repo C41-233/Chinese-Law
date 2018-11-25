@@ -1,0 +1,21 @@
+<#macro path node>
+	<#if node.parent??>
+		<@path node.parent/>
+	</#if>
+	<li>${node.name}</li>
+</#macro>
+
+<ol class="breadcrumb">
+	<#if page.parent??>
+		<@path page.parent/>
+	</#if>
+	<li class="active">${page.name}</li>
+</ol>
+
+<div class="row">
+	<div class="col-lg-2">
+		<#include 'left-menu.template.html'/>
+	</div>
+	<div class="col-lg-10">
+	</div>
+</div>

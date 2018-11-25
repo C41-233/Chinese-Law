@@ -24,6 +24,7 @@ public class Archieve {
 	private HashSet<String> lawNames = new HashSet<>();
 	
 	private List<ArchieveCollection> collections = new ArrayList<>();
+	private List<ArchieveNode> nodes = new ArrayList<>();
 	
 	public Archieve(File root) throws IOException, JAXBException {
 		for(File file : root.listFiles()) {
@@ -53,6 +54,10 @@ public class Archieve {
 		return collections;
 	}
 	
+	public List<ArchieveNode> getNodes(){
+		return nodes;
+	}
+	
 	private ArchieveNode createArchieveNode(ArchieveNode parent, File file) throws IOException, JAXBException{
 		String name = file.getName();
 		ArchieveNode node = new ArchieveNode(parent, name);
@@ -65,8 +70,11 @@ public class Archieve {
 				node.childs.add(createArchieveNode(node, child));
 			}
 		}
-		node.documents.sort(new NameComparator<ArchieveCollection>(d -> d.name));
-		node.childs.sort(new NameComparator<ArchieveNode>(d -> d.name));
+		node.documents.sort(new NameComparator<ArchieveCollection>(d -> d.getName()));
+		node.childs.sort(new NameComparator<ArchieveNode>(d -> d.getName()));
+		if(parent != null) {
+			nodes.add(node);
+		}
 		return node;
 	}
 	

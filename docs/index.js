@@ -12,7 +12,7 @@ $(function(){
 		})
 	}
 
-	loadPage("collections/宪法.html")
+	loadPage("collections/宪法-宪法.html")
 
 	$(".collection").click(function(){
 		var target = $(this).data("href")

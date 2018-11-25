@@ -3,10 +3,10 @@ package document;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArchieveNode{
+public class ArchieveNode implements IArchieveNode{
 
-	public final ArchieveNode parent;
-	public final String name;
+	private final ArchieveNode parent;
+	private final String name;
 	
 	public final List<ArchieveNode> childs = new ArrayList<>();
 	public final List<ArchieveCollection> documents = new ArrayList<>();
@@ -26,7 +26,7 @@ public class ArchieveNode{
 	public void toString(StringBuilder sb, String padding) {
 		sb.append(padding + name);
 		for(ArchieveCollection document : documents) {
-			sb.append("\n" + padding + "\t-" + document.name);
+			sb.append("\n" + padding + "\t-" + document.getName());
 		}
 		for(ArchieveNode child : childs) {
 			sb.append("\n");
@@ -34,11 +34,14 @@ public class ArchieveNode{
 		}
 	}
 
-	public String getPath() {
-		if(parent != null) {
-			return parent + "/" + name;
-		}
+	@Override
+	public ArchieveNode getParent() {
+		return parent;
+	}
+
+	@Override
+	public String getName() {
 		return name;
 	}
-	
+
 }
