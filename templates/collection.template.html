@@ -1,9 +1,4 @@
-<#macro path node>
-	<#if node.parent??>
-		<@path node.parent/>
-	</#if>
-	<li>${node.name}</li>
-</#macro>
+<#include 'api/path.api.html'/>
 
 <ol class="breadcrumb">
 	<@path page.parent/>

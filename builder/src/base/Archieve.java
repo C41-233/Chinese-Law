@@ -67,11 +67,11 @@ public class Archieve {
 				node.documents.add(createArchieveCollection(node, child));
 			}
 			else {
-				node.childs.add(createArchieveNode(node, child));
+				node.collections.add(createArchieveNode(node, child));
 			}
 		}
 		node.documents.sort(new NameComparator<ArchieveCollection>(d -> d.getName()));
-		node.childs.sort(new NameComparator<ArchieveNode>(d -> d.getName()));
+		node.collections.sort(new NameComparator<ArchieveNode>(d -> d.getName()));
 		if(parent != null) {
 			nodes.add(node);
 		}

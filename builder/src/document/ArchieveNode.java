@@ -8,7 +8,7 @@ public class ArchieveNode implements IArchieveNode{
 	private final ArchieveNode parent;
 	private final String name;
 	
-	public final List<ArchieveNode> childs = new ArrayList<>();
+	public final List<ArchieveNode> collections = new ArrayList<>();
 	public final List<ArchieveCollection> documents = new ArrayList<>();
 
 	public ArchieveNode(ArchieveNode parent, String name) {
@@ -28,12 +28,19 @@ public class ArchieveNode implements IArchieveNode{
 		for(ArchieveCollection document : documents) {
 			sb.append("\n" + padding + "\t-" + document.getName());
 		}
-		for(ArchieveNode child : childs) {
+		for(ArchieveNode child : collections) {
 			sb.append("\n");
 			child.toString(sb, padding + "\t");
 		}
 	}
 
+	public List<IArchieveNode> getChildren(){
+		List<IArchieveNode> nodes = new ArrayList<>();
+		nodes.addAll(collections);
+		nodes.addAll(documents);
+		return nodes;
+	}
+	
 	@Override
 	public ArchieveNode getParent() {
 		return parent;

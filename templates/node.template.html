@@ -1,8 +1,21 @@
-<#macro path node>
-	<#if node.parent??>
-		<@path node.parent/>
-	</#if>
-	<li>${node.name}</li>
+<#include 'api/path.api.html'/>
+
+<#macro ul page>
+	<ul>
+	<#list page.children as node>
+		<li>${node.name}
+		<#if node.children??>
+			<@ul node/>
+		<#else>
+			<ul>
+				<#list node.laws as law>
+					<li>《${law.name}》</li>
+				</#list>
+			</ul>
+		</#if>
+		</li>
+	</#list>
+	</ul>
 </#macro>
 
 <ol class="breadcrumb">
@@ -17,5 +30,6 @@
 		<#include 'left-menu.template.html'/>
 	</div>
 	<div class="col-lg-10">
+		<@ul page/>
 	</div>
 </div>

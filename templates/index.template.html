@@ -7,8 +7,8 @@
 			<#list node.documents as document>
 				<li class="menu"><a class="collection" href="javascript:void(0) " data-href="collections/${document.filename}.html">${document.name}</a></li>
 			</#list>
-			<#list node.childs as child>
-				<@tree child/>
+			<#list node.collections as collection>
+				<@tree collection/>
 			</#list>
 		</ul>
 	</li>

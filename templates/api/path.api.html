@@ -1,0 +1,6 @@
+<#macro path node>
+	<#if node.parent??>
+		<@path node.parent/>
+	</#if>
+	<li>${node.name}</li>
+</#macro>

@@ -30,7 +30,7 @@ public interface IArchieveNode {
 		List<IArchieveNode> list = new ArrayList<>();
 		if(parent != null) {
 			list.addAll(parent.documents);
-			list.addAll(parent.childs);
+			list.addAll(parent.collections);
 		}
 		return list;
 	}
