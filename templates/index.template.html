@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 
-<#macro tree node>
+<#macro tree name node>
 	<li class="dropdown-submenu menu">
 		<a class="dropdown-toggle" data-toggle="dropdown">${node.name}</a>
 		<ul class="dropdown-menu">
 			<#list node.collections as collection>
-				<li class="menu"><a class="list-collection" href="javascript:void(0) " data-href="collections/${collection.filename}.html">${collection.name}</a></li>
+				<li class="menu"><a class="list-collection" href="javascript:void(0) " data-href="${name}/${collection.filename}.html">${collection.name}</a></li>
 			</#list>
 			<#list node.nodes as collection>
-				<@tree collection/>
+				<@tree name collection/>
 			</#list>
 		</ul>
 	</li>
@@ -43,8 +43,16 @@
 					<li class="dropdown">
 						<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"  data-submenu>全国性法律文件 <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<#list nationals as national>
-								<@tree national/>
+							<#list nationals.roots as national>
+								<@tree nationals.baseDirectoryName national/>
+							</#list>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"  data-submenu>地方性法律文件 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<#list locals.roots as local>
+								<@tree locals.baseDirectoryName local/>
 							</#list>
 						</ul>
 					</li>

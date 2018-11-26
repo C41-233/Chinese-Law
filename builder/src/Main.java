@@ -13,6 +13,7 @@ import document.ArchieveNode;
 import freemarker.template.TemplateException;
 import model.ArchieveException;
 import page.IPage;
+import page.PageLocal;
 import page.PageNational;
 import template.TemplateBuilder;
 
@@ -22,13 +23,16 @@ public class Main {
 		FileUtils.cleanDirectory(Config.OutputRoot);
 		Archieve archieve = new Archieve(Config.DataInputRoot);
 		
-		PageNational pageNational = new PageNational(archieve.getRoots(), archieve.getLaws());
+		PageNational pageNational = new PageNational(archieve.getRoots());
 		outputPage(pageNational);
+		
+		PageLocal pageLocal = new PageLocal(archieve.getLaws());
+		outputPage(pageLocal);
 
 		File templateIndex = new File(Config.TemplateInputPath, "index.template.html");
 		HashMap<String, Object> vo = new HashMap<>();
-		vo.put("nationals", pageNational.getRoots());
-		
+		vo.put("nationals", pageNational);
+		vo.put("locals", pageLocal);
 		
 		String content = TemplateBuilder.generate(templateIndex , vo);
 		File outputIndex = new File(Config.OutputRoot, "index.html");
@@ -47,6 +51,7 @@ public class Main {
 			
 			HashMap<String, Object> arguments = new HashMap<>();
 			arguments.put("page", collection);
+			arguments.put("data", page.getBaseDirectoryName());
 			
 			File templateCollection = new File(Config.TemplateInputPath, page.getTemplateCollectionName());
 			String content = TemplateBuilder.generate(templateCollection, arguments);
@@ -62,6 +67,7 @@ public class Main {
 			
 			HashMap<String, Object> arguments = new HashMap<>();
 			arguments.put("page", node);
+			arguments.put("data", page.getBaseDirectoryName());
 			
 			File templateNode = new File(Config.TemplateInputPath, page.getTemplateNodeName());
 			String content = TemplateBuilder.generate(templateNode, arguments);

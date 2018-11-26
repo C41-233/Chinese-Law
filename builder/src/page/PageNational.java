@@ -16,7 +16,7 @@ public class PageNational implements IPage{
 	private List<ArchieveCollection> collections = new ArrayList<>();
 	private List<ArchieveNode> nodes = new ArrayList<>();
 	
-	public PageNational(List<ArchieveRoot> roots, List<Law> laws) {
+	public PageNational(List<ArchieveRoot> roots) {
 		for(ArchieveRoot src : roots) {
 			ArchieveRoot dest = createRoot(src);
 			if(dest != null) {

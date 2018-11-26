@@ -34,7 +34,7 @@ public class Archieve {
 		for (ArchieveRoot archieveRoot : rootNodes) {
 			archieveRoot.setRoots(rootNodes);
 		}
-		
+
 		//¼ì²édeprecated
 		for(Law law : laws) {
 			String document = law.getDeprecatedReplaceDocument();
@@ -89,7 +89,6 @@ public class Archieve {
 			if(content.length() > 0) {
 				Document document = DocumentReader.read(documentFile);
 				law.setDocument(document);
-				laws.add(law);
 			}
 			laws.add(law);
 			lawNames.add(law.name);

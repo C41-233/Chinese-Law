@@ -1,5 +1,6 @@
 package document;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale.Category;
 
@@ -70,6 +71,15 @@ public class Law {
 	//是否全国性法律
 	public boolean isNational() {
 		return document == null || document.category.isNational();
+	}
+
+	//地方性法律
+	public boolean isLocal() {
+		return document != null && document.category.isLocal();
+	}
+	
+	public List<String> getCategoryPath(){
+		return document == null ? null : document.category.getPath();
 	}
 	
 }

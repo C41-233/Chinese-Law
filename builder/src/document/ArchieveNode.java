@@ -36,8 +36,8 @@ public class ArchieveNode implements IArchieveNode{
 
 	public List<IArchieveNode> getChildren(){
 		List<IArchieveNode> nodes = new ArrayList<>();
-		nodes.addAll(nodes);
-		nodes.addAll(collections);
+		nodes.addAll(this.nodes);
+		nodes.addAll(this.collections);
 		return nodes;
 	}
 	
