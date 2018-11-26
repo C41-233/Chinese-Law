@@ -1,16 +1,24 @@
 package document;
 
 import java.util.List;
+import java.util.Locale.Category;
 
 import model.Document;
 import model.History;
 
 public class Law {
 
-	public String name;
+	public final String name;
 	
 	private Document document;
 	
+	private final ArchieveCollection parent;
+	
+	public Law(ArchieveCollection parent, String name) {
+		this.parent = parent;
+		this.name = name;
+	}
+
 	public void setDocument(Document document) {
 		this.document = document;
 	}
@@ -53,6 +61,15 @@ public class Law {
 			return null;
 		}
 		return document.deprecated.document;
+	}
+	
+	public ArchieveCollection getParent() {
+		return parent;
+	}
+
+	//是否全国性法律
+	public boolean isNational() {
+		return document == null || document.category.isNational();
 	}
 	
 }

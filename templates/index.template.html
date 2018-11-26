@@ -4,10 +4,10 @@
 	<li class="dropdown-submenu menu">
 		<a class="dropdown-toggle" data-toggle="dropdown">${node.name}</a>
 		<ul class="dropdown-menu">
-			<#list node.documents as document>
-				<li class="menu"><a class="list-collection" href="javascript:void(0) " data-href="collections/${document.filename}.html">${document.name}</a></li>
-			</#list>
 			<#list node.collections as collection>
+				<li class="menu"><a class="list-collection" href="javascript:void(0) " data-href="collections/${collection.filename}.html">${collection.name}</a></li>
+			</#list>
+			<#list node.nodes as collection>
 				<@tree collection/>
 			</#list>
 		</ul>
@@ -41,10 +41,10 @@
 			<div class="collapse navbar-collapse" id="nav-head-body">
 				<ul class="nav navbar-nav">
 					<li class="dropdown">
-						<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"  data-submenu>法律文件 <span class="caret"></span></a>
+						<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"  data-submenu>全国性法律文件 <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<#list bases as base>
-								<@tree base/>
+							<#list nationals as national>
+								<@tree national/>
 							</#list>
 						</ul>
 					</li>

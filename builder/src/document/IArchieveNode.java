@@ -27,8 +27,8 @@ public interface IArchieveNode {
 		ArchieveNode parent = getParent();
 		List<IArchieveNode> list = new ArrayList<>();
 		if(parent != null) {
-			list.addAll(parent.documents);
 			list.addAll(parent.collections);
+			list.addAll(parent.nodes);
 		}
 		return list;
 	}

@@ -24,9 +24,6 @@ public class Archieve {
 	private List<Law> laws = new ArrayList<>();
 	private HashSet<String> lawNames = new HashSet<>();
 	
-	private List<ArchieveCollection> collections = new ArrayList<>();
-	private List<ArchieveNode> nodes = new ArrayList<>();
-	
 	public Archieve(File root) throws IOException, JAXBException {
 		for(File file : root.listFiles()) {
 			ArchieveRoot node = (ArchieveRoot) createArchieveNode(null, file);
@@ -47,20 +44,12 @@ public class Archieve {
 		}
 	}
 
-	public List<ArchieveRoot> getRootNodes(){
-		return rootNodes;
-	}
-	
 	public List<Law> getLaws(){
 		return laws;
 	}
-	
-	public List<ArchieveCollection> getCollections(){
-		return collections;
-	}
-	
-	public List<ArchieveNode> getNodes(){
-		return nodes;
+
+	public List<ArchieveRoot> getRoots() {
+		return rootNodes;
 	}
 	
 	private ArchieveNode createArchieveNode(ArchieveNode parent, File file) throws IOException, JAXBException{
@@ -69,29 +58,28 @@ public class Archieve {
 		
 		for(File child : file.listFiles()) {
 			if(isDocumentNode(child)) {
-				node.documents.add(createArchieveCollection(node, child));
+				node.collections.add(createArchieveCollection(node, child));
 			}
 			else {
-				node.collections.add(createArchieveNode(node, child));
+				node.nodes.add(createArchieveNode(node, child));
 			}
 		}
-		node.documents.sort(new NameComparator<ArchieveCollection>(d -> d.getName()));
-		node.collections.sort(new NameComparator<ArchieveNode>(d -> d.getName()));
-		nodes.add(node);
+		node.collections.sort(new NameComparator<ArchieveCollection>(d -> d.getName()));
+		node.nodes.sort(new NameComparator<ArchieveNode>(d -> d.getName()));
 		return node;
 	}
 	
 	private ArchieveCollection createArchieveCollection(ArchieveNode parent, File file) throws IOException, JAXBException {
-		String name = file.getName();
-		ArchieveCollection collection = new ArchieveCollection(parent, name);
+		String collectionName = file.getName();
+		ArchieveCollection collection = new ArchieveCollection(parent, collectionName);
 		for(File documentFile : file.listFiles()) {
 			String content = FileUtils.readFileToString(documentFile, "utf-8");
-			Law law = new Law();
 			String filename = documentFile.getName();
 			if(!filename.endsWith(".xml")) {
 				throw new ArchieveException("%s 文件名不符合规范", filename);
 			}
-			law.name = filename.substring(0, filename.length() - 4);
+			String name = filename.substring(0, filename.length() - 4);
+			Law law = new Law(collection, name);
 			if(law.name.contains("(") || law.name.contains(")")
 					|| law.name.contains(" ")
 					|| law.name.contains("《") || law.name.contains("》")
@@ -107,7 +95,6 @@ public class Archieve {
 			lawNames.add(law.name);
 			collection.laws.add(law);
 		}
-		collections.add(collection);
 		collection.laws.sort(new NameComparator<Law>(law -> law.name));
 		return collection;
 	}
@@ -134,5 +121,5 @@ public class Archieve {
 		}
 		throw new RuntimeException();
 	}
-	
+
 }

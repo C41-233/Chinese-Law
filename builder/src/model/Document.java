@@ -21,6 +21,7 @@ public class Document {
 	public Deprecated deprecated;
 	
 	public void valid() {
+		category.valid();
 		for (History history : histories) {
 			history.valid();
 		}
