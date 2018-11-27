@@ -1,21 +1,21 @@
 <#include 'api/path.api.html'/>
 
 <#macro ul page>
-	<ul>
+	<ol>
 	<#list page.children as node>
-		<li>${node.name}
+		<li><a href="javascript:void(0)" class="list-collection node-entry" data-href="${data}/${node.filename}.html">${node.name}</a>
 		<#if node.children??>
 			<@ul node/>
 		<#else>
-			<ul>
+			<ol>
 				<#list node.laws as law>
-					<li>《${law.name}》</li>
+					<li>《${law.name}》<#if law.version gt 0>[${law.version}]</#if></li>
 				</#list>
-			</ul>
+			</ol>
 		</#if>
 		</li>
 	</#list>
-	</ul>
+	</ol>
 </#macro>
 
 <ol class="breadcrumb">
@@ -30,6 +30,8 @@
 		<#include 'left-menu.template.html'/>
 	</div>
 	<div class="col-lg-10">
-		<@ul page/>
+		<div class="entries">
+			<@ul page/>
+		</div>
 	</div>
 </div>

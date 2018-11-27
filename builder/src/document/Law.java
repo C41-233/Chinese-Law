@@ -1,8 +1,6 @@
 package document;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale.Category;
 
 import model.Document;
 import model.History;
