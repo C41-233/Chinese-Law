@@ -6,10 +6,10 @@ import javax.xml.bind.JAXBException;
 
 import org.apache.commons.io.FileUtils;
 
-import base.Archieve;
+import base.Archive;
 import base.Config;
-import document.ArchieveCollection;
-import document.ArchieveNode;
+import document.ArchiveCollection;
+import document.ArchiveNode;
 import freemarker.template.TemplateException;
 import model.ArchieveException;
 import page.IPage;
@@ -21,12 +21,12 @@ public class Main {
 
 	public static void main(String[] args) throws JAXBException, IOException, TemplateException {
 		FileUtils.cleanDirectory(Config.OutputRoot);
-		Archieve archieve = new Archieve(Config.DataInputRoot);
-		
-		PageNational pageNational = new PageNational(archieve.getRoots());
+		Archive archive = new Archive(Config.DataInputRoot);
+
+		PageNational pageNational = new PageNational(archive.getRoots());
 		outputPage(pageNational);
 		
-		PageLocal pageLocal = new PageLocal(archieve.getLaws());
+		PageLocal pageLocal = new PageLocal(archive.getLaws());
 		outputPage(pageLocal);
 
 		File templateIndex = new File(Config.TemplateInputPath, "index.template.html");
@@ -43,10 +43,10 @@ public class Main {
 		File outputRoot = new File(Config.HtmlOutputPath, page.getBaseDirectoryName());
 		outputRoot.mkdir();
 		
-		for(ArchieveCollection collection : page.getCollections()) {
+		for(ArchiveCollection collection : page.getCollections()) {
 			File outputCollection = new File(outputRoot, collection.getFilename() + ".html");
 			if(outputCollection.exists()) {
-				throw new ArchieveException("√˚◊÷÷ÿ∏¥£∫%s", collection.getName());
+				throw new ArchieveException("ÂêçÂ≠óÈáçÂ§çÔºö%s", collection.getName());
 			}
 			
 			HashMap<String, Object> arguments = new HashMap<>();
@@ -59,10 +59,10 @@ public class Main {
 			FileUtils.write(outputCollection, content, "utf-8");
 		}
 		
-		for(ArchieveNode node : page.getNodes()) {
+		for(ArchiveNode node : page.getNodes()) {
 			File outputNode = new File(outputRoot, node.getFilename() + ".html");
 			if(outputNode.exists()) {
-				throw new ArchieveException("√˚◊÷÷ÿ∏¥£∫%s", node.getName());
+				throw new ArchieveException("ÂêçÂ≠óÈáçÂ§çÔºö%s", node.getName());
 			}
 			
 			HashMap<String, Object> arguments = new HashMap<>();

@@ -11,9 +11,9 @@ public class Law {
 	
 	private Document document;
 	
-	private final ArchieveCollection parent;
+	private final ArchiveCollection parent;
 	
-	public Law(ArchieveCollection parent, String name) {
+	public Law(ArchiveCollection parent, String name) {
 		this.parent = parent;
 		this.name = name;
 	}
@@ -62,16 +62,16 @@ public class Law {
 		return document.deprecated.document;
 	}
 	
-	public ArchieveCollection getParent() {
+	public ArchiveCollection getParent() {
 		return parent;
 	}
 
-	//ÊÇ·ñÈ«¹úĞÔ·¨ÂÉ
+	//æ˜¯å¦å…¨å›½æ€§æ³•å¾‹
 	public boolean isNational() {
 		return document == null || document.category.isNational();
 	}
 
-	//µØ·½ĞÔ·¨ÂÉ
+	//åœ°æ–¹æ€§æ³•å¾‹
 	public boolean isLocal() {
 		return document != null && document.category.isLocal();
 	}

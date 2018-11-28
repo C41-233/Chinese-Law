@@ -2,8 +2,8 @@ package page;
 
 import java.util.List;
 
-import document.ArchieveCollection;
-import document.ArchieveNode;
+import document.ArchiveCollection;
+import document.ArchiveNode;
 
 public interface IPage {
 
@@ -13,9 +13,9 @@ public interface IPage {
 	
 	public String getTemplateNodeName();
 	
-	public List<ArchieveCollection> getCollections();
+	public List<ArchiveCollection> getCollections();
 
-	public List<ArchieveNode> getNodes();
+	public List<ArchiveNode> getNodes();
 
 	
 }

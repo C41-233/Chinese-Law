@@ -2,15 +2,15 @@ package document;
 
 import java.util.List;
 
-public class ArchieveRoot extends ArchieveNode{
+public class ArchiveRoot extends ArchiveNode {
 
-	public ArchieveRoot(String name) {
+	public ArchiveRoot(String name) {
 		super(null, name);
 	}
 
-	private List<ArchieveRoot> roots;
+	private List<ArchiveRoot> roots;
 	
-	public void setRoots(List<ArchieveRoot> rootNodes) {
+	public void setRoots(List<ArchiveRoot> rootNodes) {
 		this.roots = rootNodes;
 	}
 

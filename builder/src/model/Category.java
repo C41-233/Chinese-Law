@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
@@ -10,7 +11,7 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlRootElement(name = "category")
 public class Category {
 
-	public static final String CategoryRegex = "宪法|法律|行政法规|司法解释|党章|地方(司法文件)";
+	public static final String CategoryRegex = "瀹硶|娉曞緥|琛屾斂娉曡|鍙告硶瑙ｉ噴|鍏氱珷|鍦版柟(鍙告硶鏂囦欢)";
 
 	@XmlAttribute(name = "id")
 	public String id;
@@ -20,23 +21,21 @@ public class Category {
 	
 	public void valid() {
 		if(!id.matches(CategoryRegex)) {
-			throw new ArchieveException("文件类型不符合：%s", id);
+			throw new ArchieveException("鏂囦欢绫诲瀷涓嶇鍚堬細%s", id);
 		}
 	}
 
 	public boolean isNational() {
-		return !id.startsWith("地方");
+		return !id.startsWith("鍦版柟");
 	}
 
 	public boolean isLocal() {
-		return id.startsWith("地方");
+		return id.startsWith("鍦版柟");
 	}
 
 	public List<String> getPath() {
 		List<String> paths = new ArrayList<>();
-		for(String token : path.split("\\w")) {
-			paths.add(token);
-		}
+		Collections.addAll(paths, path.split("\\w"));
 		return paths;
 	}
 	

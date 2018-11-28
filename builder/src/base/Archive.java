@@ -7,39 +7,35 @@ import java.util.List;
 
 import javax.xml.bind.JAXBException;
 
+import document.*;
 import org.apache.commons.io.FileUtils;
 
-import document.ArchieveCollection;
-import document.ArchieveNode;
-import document.ArchieveRoot;
-import document.DocumentReader;
-import document.Law;
 import model.ArchieveException;
 import model.Document;
 
-public class Archieve {
+public class Archive {
 
-	private List<ArchieveRoot> rootNodes = new ArrayList<>();
+	private List<ArchiveRoot> rootNodes = new ArrayList<>();
 	
 	private List<Law> laws = new ArrayList<>();
 	private HashSet<String> lawNames = new HashSet<>();
 	
-	public Archieve(File root) throws IOException, JAXBException {
+	public Archive(File root) throws IOException, JAXBException {
 		for(File file : root.listFiles()) {
-			ArchieveRoot node = (ArchieveRoot) createArchieveNode(null, file);
+			ArchiveRoot node = (ArchiveRoot) createArchiveNode(null, file);
 			rootNodes.add(node);
 			System.out.println(node);
 		}
 		
-		for (ArchieveRoot archieveRoot : rootNodes) {
-			archieveRoot.setRoots(rootNodes);
+		for (ArchiveRoot archiveRoot : rootNodes) {
+			archiveRoot.setRoots(rootNodes);
 		}
 
-		//ºÏ≤Èdeprecated
+		//Ê£ÄÊü•deprecated
 		for(Law law : laws) {
 			String document = law.getDeprecatedReplaceDocument();
 			if(document != null && !lawNames.contains(document)) {
-				throw new ArchieveException("°∂%s°∑µƒÃÊ¥˙Œƒº˛°∂%s°∑≤ª¥Ê‘⁄", law.name, document);
+				throw new ArchieveException("„Ää%s„ÄãÁöÑÊõø‰ª£Êñá‰ª∂„Ää%s„Äã‰∏çÂ≠òÂú®", law.name, document);
 			}
 		}
 	}
@@ -48,43 +44,43 @@ public class Archieve {
 		return laws;
 	}
 
-	public List<ArchieveRoot> getRoots() {
+	public List<ArchiveRoot> getRoots() {
 		return rootNodes;
 	}
 	
-	private ArchieveNode createArchieveNode(ArchieveNode parent, File file) throws IOException, JAXBException{
+	private ArchiveNode createArchiveNode(ArchiveNode parent, File file) throws IOException, JAXBException{
 		String name = file.getName();
-		ArchieveNode node = parent != null ? new ArchieveNode(parent, name) : new ArchieveRoot(name);
+		ArchiveNode node = parent != null ? new ArchiveNode(parent, name) : new ArchiveRoot(name);
 		
 		for(File child : file.listFiles()) {
 			if(isDocumentNode(child)) {
-				node.collections.add(createArchieveCollection(node, child));
+				node.collections.add(createArchiveCollection(node, child));
 			}
 			else {
-				node.nodes.add(createArchieveNode(node, child));
+				node.nodes.add(createArchiveNode(node, child));
 			}
 		}
-		node.collections.sort(new NameComparator<ArchieveCollection>(d -> d.getName()));
-		node.nodes.sort(new NameComparator<ArchieveNode>(d -> d.getName()));
+		node.collections.sort(new NameComparator<>(ArchiveCollection::getName));
+		node.nodes.sort(new NameComparator<>(ArchiveNode::getName));
 		return node;
 	}
 	
-	private ArchieveCollection createArchieveCollection(ArchieveNode parent, File file) throws IOException, JAXBException {
+	private ArchiveCollection createArchiveCollection(ArchiveNode parent, File file) throws IOException, JAXBException {
 		String collectionName = file.getName();
-		ArchieveCollection collection = new ArchieveCollection(parent, collectionName);
+		ArchiveCollection collection = new ArchiveCollection(parent, collectionName);
 		for(File documentFile : file.listFiles()) {
 			String content = FileUtils.readFileToString(documentFile, "utf-8");
 			String filename = documentFile.getName();
 			if(!filename.endsWith(".xml")) {
-				throw new ArchieveException("%s Œƒº˛√˚≤ª∑˚∫œπÊ∑∂", filename);
+				throw new ArchieveException("%s Êñá‰ª∂Âêç‰∏çÁ¨¶ÂêàËßÑËåÉ", filename);
 			}
 			String name = filename.substring(0, filename.length() - 4);
 			Law law = new Law(collection, name);
 			if(law.name.contains("(") || law.name.contains(")")
 					|| law.name.contains(" ")
-					|| law.name.contains("°∂") || law.name.contains("°∑")
+					|| law.name.contains("„Ää") || law.name.contains("„Äã")
 			) {
-				throw new ArchieveException("∑®¬…√˚≥∆∑«∑®◊÷∑˚£∫%s", law.name);
+				throw new ArchieveException("Ê≥ïÂæãÂêçÁß∞ÈùûÊ≥ïÂ≠óÁ¨¶Ôºö%s", law.name);
 			}
 			if(content.length() > 0) {
 				Document document = DocumentReader.read(documentFile);
@@ -94,7 +90,7 @@ public class Archieve {
 			lawNames.add(law.name);
 			collection.laws.add(law);
 		}
-		collection.laws.sort(new NameComparator<Law>(law -> law.name));
+		collection.laws.sort(new NameComparator<>(law -> law.name));
 		return collection;
 	}
 

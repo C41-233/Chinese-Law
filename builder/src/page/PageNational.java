@@ -4,50 +4,50 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-import document.ArchieveCollection;
-import document.ArchieveNode;
-import document.ArchieveRoot;
+import document.ArchiveCollection;
+import document.ArchiveNode;
+import document.ArchiveRoot;
 import document.Law;
 
 public class PageNational implements IPage{
 
 	private HashSet<Law> laws = new HashSet<>();
-	private List<ArchieveRoot> roots = new ArrayList<>();
-	private List<ArchieveCollection> collections = new ArrayList<>();
-	private List<ArchieveNode> nodes = new ArrayList<>();
+	private List<ArchiveRoot> roots = new ArrayList<>();
+	private List<ArchiveCollection> collections = new ArrayList<>();
+	private List<ArchiveNode> nodes = new ArrayList<>();
 	
-	public PageNational(List<ArchieveRoot> roots) {
-		for(ArchieveRoot src : roots) {
-			ArchieveRoot dest = createRoot(src);
+	public PageNational(List<ArchiveRoot> roots) {
+		for(ArchiveRoot src : roots) {
+			ArchiveRoot dest = createRoot(src);
 			if(dest != null) {
 				this.roots.add(dest);
 			}
 		}
-		for(ArchieveRoot root : this.roots) {
+		for(ArchiveRoot root : this.roots) {
 			root.setRoots(this.roots);
 		}
 	}
 
-	private ArchieveRoot createRoot(ArchieveRoot src) {
-		ArchieveRoot dest = new ArchieveRoot(src.getName());
-		return (ArchieveRoot) DoCreateNode(dest, src);
+	private ArchiveRoot createRoot(ArchiveRoot src) {
+		ArchiveRoot dest = new ArchiveRoot(src.getName());
+		return (ArchiveRoot) DoCreateNode(dest, src);
 	}
 	
-	private ArchieveNode createNode(ArchieveNode parent, ArchieveNode src) {
-		ArchieveNode dest = new ArchieveNode(parent, src.getName());
+	private ArchiveNode createNode(ArchiveNode parent, ArchiveNode src) {
+		ArchiveNode dest = new ArchiveNode(parent, src.getName());
 		return DoCreateNode(dest, src);
 	}
 	
-	private ArchieveNode DoCreateNode(ArchieveNode dest, ArchieveNode src) {
-		for(ArchieveNode node : src.nodes) {
-			ArchieveNode destNode = createNode(dest, node);
+	private ArchiveNode DoCreateNode(ArchiveNode dest, ArchiveNode src) {
+		for(ArchiveNode node : src.nodes) {
+			ArchiveNode destNode = createNode(dest, node);
 			if(destNode != null) {
 				dest.nodes.add(destNode);
 			}
 		}
 
-		for(ArchieveCollection collection : src.collections) {
-			ArchieveCollection destCollection = createCollection(dest, collection);
+		for(ArchiveCollection collection : src.collections) {
+			ArchiveCollection destCollection = createCollection(dest, collection);
 			if(destCollection != null) {
 				dest.collections.add(destCollection);
 			}
@@ -60,8 +60,8 @@ public class PageNational implements IPage{
 		return null;
 	}
 
-	private ArchieveCollection createCollection(ArchieveNode parent, ArchieveCollection src) {
-		ArchieveCollection dest = new ArchieveCollection(parent, src.getName());
+	private ArchiveCollection createCollection(ArchiveNode parent, ArchiveCollection src) {
+		ArchiveCollection dest = new ArchiveCollection(parent, src.getName());
 
 		for(Law law : src.laws) {
 			if(law.isNational()) {
@@ -83,16 +83,16 @@ public class PageNational implements IPage{
 	}
 
 	@Override
-	public List<ArchieveCollection> getCollections() {
+	public List<ArchiveCollection> getCollections() {
 		return collections;
 	}
 
 	@Override
-	public List<ArchieveNode> getNodes() {
+	public List<ArchiveNode> getNodes() {
 		return nodes;
 	}
 
-	public List<ArchieveRoot> getRoots() {
+	public List<ArchiveRoot> getRoots() {
 		return roots;
 	}
 

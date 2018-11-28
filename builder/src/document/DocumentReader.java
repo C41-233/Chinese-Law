@@ -32,7 +32,7 @@ public class DocumentReader {
 			return document;
 		}
 		catch (ArchieveException e) {
-			throw new ArchieveException(e, "½âÎö%s³öÏÖ´íÎó", file.getAbsolutePath());
+			throw new ArchieveException(e, "è§£æ%så‡ºç°é”™è¯¯", file.getAbsolutePath());
 		}
 	}	
 	

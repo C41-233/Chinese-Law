@@ -3,15 +3,15 @@ package document;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArchieveNode implements IArchieveNode{
+public class ArchiveNode implements IArchieveNode{
 
-	private final ArchieveNode parent;
+	private final ArchiveNode parent;
 	private final String name;
 	
-	public final List<ArchieveNode> nodes = new ArrayList<>();
-	public final List<ArchieveCollection> collections = new ArrayList<>();
+	public final List<ArchiveNode> nodes = new ArrayList<>();
+	public final List<ArchiveCollection> collections = new ArrayList<>();
 
-	public ArchieveNode(ArchieveNode parent, String name) {
+	public ArchiveNode(ArchiveNode parent, String name) {
 		this.parent = parent;
 		this.name = name;
 	}
@@ -25,10 +25,10 @@ public class ArchieveNode implements IArchieveNode{
 	
 	public void toString(StringBuilder sb, String padding) {
 		sb.append(padding + name);
-		for(ArchieveCollection document : collections) {
+		for(ArchiveCollection document : collections) {
 			sb.append("\n" + padding + "\t-" + document.getName());
 		}
-		for(ArchieveNode child : nodes) {
+		for(ArchiveNode child : nodes) {
 			sb.append("\n");
 			child.toString(sb, padding + "\t");
 		}
@@ -42,7 +42,7 @@ public class ArchieveNode implements IArchieveNode{
 	}
 	
 	@Override
-	public ArchieveNode getParent() {
+	public ArchiveNode getParent() {
 		return parent;
 	}
 

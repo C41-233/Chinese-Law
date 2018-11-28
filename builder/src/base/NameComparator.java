@@ -18,7 +18,7 @@ public class NameComparator<T> implements Comparator<T>{
 		return compare(s1, s2);
 	}
 
-	private static final char[] Numbers = {'Ò»', '¶ş', 'Èı', 'ËÄ', 'Îå', 'Áù', 'Æß', '°Ë', '¾Å', 'Ê®'};
+	private static final char[] Numbers = {'ä¸€', 'äºŒ', 'ä¸‰', 'å››', 'äº”', 'å…­', 'ä¸ƒ', 'å…«', 'ä¹', 'å'};
 	
 	private int compare(String s1, String s2) {
 		if(s1 == s2) {

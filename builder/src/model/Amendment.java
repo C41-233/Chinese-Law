@@ -12,29 +12,29 @@ public class Amendment extends History{
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("¸ù¾İ");
+		sb.append("æ ¹æ®");
 		sb.append(createDate);
 		sb.append(organization);
 		if(notice != null) {
-			sb.append("Í¨¹ıµÄ¡¶");
+			sb.append("é€šè¿‡çš„ã€Š");
 			sb.append(notice);
-			sb.append("¡·");
+			sb.append("ã€‹");
 		}
-		sb.append("ĞŞÕı");
+		sb.append("ä¿®æ­£");
 		if(id != null || executeDate != null) {
-			sb.append("£¨");
+			sb.append("ï¼ˆ");
 			if(id != null) {
 				sb.append(id);
 			}
 			if(id != null && executeDate != null) {
-				sb.append("£¬");
+				sb.append("ï¼Œ");
 			}
 			if(executeDate != null) {
-				sb.append("×Ô");
+				sb.append("è‡ª");
 				sb.append(executeDate);
-				sb.append("ÆğÊ©ĞĞ");
+				sb.append("èµ·æ–½è¡Œ");
 			}
-			sb.append("£©");
+			sb.append("ï¼‰");
 		}
 		return sb.toString();
 	}
@@ -44,7 +44,7 @@ public class Amendment extends History{
 		super.valid();
 		if(notice != null) {
 			if(notice.contains("<") || notice.contains(">")) {
-				throw new ArchieveException("noticeÖĞ°üº¬´íÎóµÄ·ûºÅ");
+				throw new ArchieveException("noticeä¸­åŒ…å«é”™è¯¯çš„ç¬¦å·");
 			}
 		}
 	}

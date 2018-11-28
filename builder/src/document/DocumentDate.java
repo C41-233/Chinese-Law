@@ -7,7 +7,7 @@ public class DocumentDate {
 	public final int day;
 	
 	public DocumentDate(String value) {
-		String[] tokens = value.split("Äê|ÔÂ|ÈÕ");
+		String[] tokens = value.split("å¹´|æœˆ|æ—¥");
 		year = Integer.parseInt(tokens[0]);
 		month = Integer.parseInt(tokens[1]);
 		day = Integer.parseInt(tokens[2]);

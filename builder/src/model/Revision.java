@@ -10,21 +10,21 @@ public class Revision extends History{
 		StringBuilder sb = new StringBuilder();
 		sb.append(createDate);
 		sb.append(organization);
-		sb.append("Í¨¹ý");
+		sb.append("é€šè¿‡");
 		if(id != null || executeDate != null) {
-			sb.append("£¨");
+			sb.append("ï¼ˆ");
 			if(id != null) {
 				sb.append(id);
 			}
 			if(id != null && executeDate != null) {
-				sb.append("£¬");
+				sb.append("ï¼Œ");
 			}
 			if(executeDate != null) {
-				sb.append("×Ô");
+				sb.append("è‡ª");
 				sb.append(executeDate);
-				sb.append("ÆðÊ©ÐÐ");
+				sb.append("èµ·æ–½è¡Œ");
 			}
-			sb.append("£©");
+			sb.append("ï¼‰");
 		}
 		return sb.toString();
 	}

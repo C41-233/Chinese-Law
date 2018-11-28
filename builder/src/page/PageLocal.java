@@ -3,19 +3,19 @@ package page;
 import java.util.ArrayList;
 import java.util.List;
 
-import document.ArchieveCollection;
-import document.ArchieveNode;
-import document.ArchieveRoot;
+import document.ArchiveCollection;
+import document.ArchiveNode;
+import document.ArchiveRoot;
 import document.IArchieveNode;
 import document.Law;
 import model.ArchieveException;
 
 public class PageLocal implements IPage{
 
-	private List<ArchieveCollection> collections = new ArrayList<>();
-	private List<ArchieveNode> nodes = new ArrayList<>();
+	private List<ArchiveCollection> collections = new ArrayList<>();
+	private List<ArchiveNode> nodes = new ArrayList<>();
 	
-	private List<ArchieveRoot> roots = new ArrayList<>();
+	private List<ArchiveRoot> roots = new ArrayList<>();
 
 	public PageLocal(List<Law> laws) {
 		for(Law law : laws) {
@@ -24,7 +24,7 @@ public class PageLocal implements IPage{
 			}
 		}
 		
-		for(ArchieveRoot root : roots) {
+		for(ArchiveRoot root : roots) {
 			root.setRoots(roots);
 		}
 	}
@@ -32,18 +32,18 @@ public class PageLocal implements IPage{
 	private void createCollection(Law law) {
 		List<String> paths = law.getCategoryPath();
 		if(paths == null) {
-			throw new ArchieveException("µØ·½·¨¹æ±ØÐë°üº¬µØ·½Â·¾¶£º%s", law.name);
+			throw new ArchieveException("ï¿½Ø·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø·ï¿½Â·ï¿½ï¿½ï¿½ï¿½%s", law.name);
 		}
-		ArchieveRoot root = getOrCreateRoot(paths.get(0)); //Ê¡
+		ArchiveRoot root = getOrCreateRoot(paths.get(0)); //Ê¡
 
 		if(paths.size() <= 1) {
-			ArchieveNode node = getOrCreateNode(root, root.getName());
+			ArchiveNode node = getOrCreateNode(root, root.getName());
 			fillNodes(node, law);
 			return;
 		}
 	}
 	
-	private void fillNodes(ArchieveNode root, Law law) {
+	private void fillNodes(ArchiveNode root, Law law) {
 		String name = law.getParent().getName();
 		List<String> nodes = new ArrayList<>();
 		IArchieveNode node = law.getParent().getParent();
@@ -52,47 +52,47 @@ public class PageLocal implements IPage{
 			node = node.getParent();
 		}
 		
-		ArchieveNode theNode = root;
+		ArchiveNode theNode = root;
 		for(int i = nodes.size()-1; i>=0; i--) {
 			String path = nodes.get(i);
 			theNode = getOrCreateNode(theNode, path);
 		}
 		
-		ArchieveCollection collection = getOrCreateCollection(theNode, name);
+		ArchiveCollection collection = getOrCreateCollection(theNode, name);
 		collection.laws.add(law);
 	}
 	
-	private ArchieveRoot getOrCreateRoot(String name) {
-		for(ArchieveRoot root : roots) {
+	private ArchiveRoot getOrCreateRoot(String name) {
+		for(ArchiveRoot root : roots) {
 			if(root.getName().equals(name)) {
 				return root;
 			}
 		}
-		ArchieveRoot root = new ArchieveRoot(name);
+		ArchiveRoot root = new ArchiveRoot(name);
 		roots.add(root);
 		nodes.add(root);
 		return root;
 	}
 
-	private ArchieveNode getOrCreateNode(ArchieveNode node, String name) {
-		for(ArchieveNode child : node.nodes) {
+	private ArchiveNode getOrCreateNode(ArchiveNode node, String name) {
+		for(ArchiveNode child : node.nodes) {
 			if(child.getName().equals(name)) {
 				return child;
 			}
 		}
-		ArchieveNode child = new ArchieveNode(node, name);
+		ArchiveNode child = new ArchiveNode(node, name);
 		node.nodes.add(child);
 		nodes.add(child);
 		return child;
 	}
 
-	private ArchieveCollection getOrCreateCollection(ArchieveNode node, String name) {
-		for(ArchieveCollection child : node.collections) {
+	private ArchiveCollection getOrCreateCollection(ArchiveNode node, String name) {
+		for(ArchiveCollection child : node.collections) {
 			if(child.getName().equals(name)) {
 				return child;
 			}
 		}
-		ArchieveCollection child = new ArchieveCollection(node, name);
+		ArchiveCollection child = new ArchiveCollection(node, name);
 		node.collections.add(child);
 		collections.add(child);
 		return child;
@@ -114,16 +114,16 @@ public class PageLocal implements IPage{
 	}
 
 	@Override
-	public List<ArchieveCollection> getCollections() {
+	public List<ArchiveCollection> getCollections() {
 		return collections;
 	}
 
 	@Override
-	public List<ArchieveNode> getNodes() {
+	public List<ArchiveNode> getNodes() {
 		return nodes;
 	}
 
-	public List<ArchieveRoot> getRoots() {
+	public List<ArchiveRoot> getRoots() {
 		return roots;
 	}
 

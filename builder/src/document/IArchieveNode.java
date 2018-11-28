@@ -5,12 +5,12 @@ import java.util.List;
 
 public interface IArchieveNode {
 
-	public ArchieveNode getParent();
+	public ArchiveNode getParent();
 	
 	public String getName();
 	
 	public default String getPath() {
-		ArchieveNode parent = getParent();
+		ArchiveNode parent = getParent();
 		String name = getName();
 		
 		if(parent != null) {
@@ -24,7 +24,7 @@ public interface IArchieveNode {
 	}
 
 	public default List<IArchieveNode> getNeighbours(){
-		ArchieveNode parent = getParent();
+		ArchiveNode parent = getParent();
 		List<IArchieveNode> list = new ArrayList<>();
 		if(parent != null) {
 			list.addAll(parent.collections);
