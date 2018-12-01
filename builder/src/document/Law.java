@@ -1,9 +1,10 @@
 package document;
 
-import java.util.List;
-
+import model.Deprecated;
 import model.Document;
 import model.History;
+
+import java.util.List;
 
 public class Law {
 
@@ -35,8 +36,10 @@ public class Law {
 			return 0;
 		}
 		for(History history : document.histories) {
-			DocumentDate date = new DocumentDate(history.createDate);
-			year = Math.max(year, date.year);
+			if(history.createDate != null){
+				DocumentDate date = new DocumentDate(history.createDate);
+				year = Math.max(year, date.year);
+			}
 		}
 		return year;
 	}
@@ -61,7 +64,14 @@ public class Law {
 		}
 		return document.deprecated.document;
 	}
-	
+
+	public Deprecated getDeprecatedInfo(){
+		if(document == null){
+			return null;
+		}
+		return document.deprecated;
+	}
+
 	public ArchiveCollection getParent() {
 		return parent;
 	}

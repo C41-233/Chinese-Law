@@ -9,7 +9,9 @@
 		<#else>
 			<ol>
 				<#list node.laws as law>
-					<li>《${law.name}》<#if law.version gt 0>[${law.version}]</#if></li>
+					<li	
+						<#if law.deprecated>class="deprecated"</#if>
+					>《${law.name}》<#if law.version gt 0>[${law.version}]</#if></li>
 				</#list>
 			</ol>
 		</#if>
@@ -30,6 +32,13 @@
 		<#include 'left-menu.template.html'/>
 	</div>
 	<div class="col-lg-10">
+		<div>
+			<div class="checkbox check-deprecated">
+				<label>
+					<input type="checkbox"> 包含失效的法律文件
+				</label>
+			</div>
+		</div>
 		<div class="entries">
 			<@ul page/>
 		</div>

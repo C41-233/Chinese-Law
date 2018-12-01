@@ -10,7 +10,9 @@ public class Revision extends History{
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(createDate);
+		if(createDate != null){
+			sb.append(createDate);
+		}
 		sb.append(organization);
 		sb.append("通过");
 		if(id != null || noticeDate != null || executeDate != null) {

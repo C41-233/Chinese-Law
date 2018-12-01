@@ -10,18 +10,29 @@
 		<#include 'left-menu.template.html'/>
 	</div>
 	<div class="col-lg-10">
+		<div>
+			<div class="checkbox check-deprecated">
+				<label>
+					<input type="checkbox"> 包含失效的法律文件
+				</label>
+			</div>
+		</div>
 		<#list page.laws as law>
 			<div class="law <#if law.deprecated>deprecated</#if>">
 				<h2>
 					《${law.name}》
 					<#if law.version gt 0>（${law.version}）</#if> 
 					<#if law.category??><span class="badge">${law.category}</span></#if>
+					<#if law.deprecated><span class="badge">失效</span></#if>
 				</h2>
 				<div class="small">
 					<#if law.histories??>
 						<#list law.histories as history>
 							<div>${history}</div>
 						</#list>
+					</#if>
+					<#if law.deprecated>
+						<div>${law.deprecatedInfo}</div>
 					</#if>
 				</div>
 			</div>
