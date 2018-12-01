@@ -13,8 +13,12 @@ public class Revision extends History{
 		if(createDate != null){
 			sb.append(createDate);
 		}
-		sb.append(organization);
-		sb.append("通过");
+		if(organization != null){
+			sb.append(organization);
+		}
+		if(createDate != null && organization != null){
+			sb.append("通过");
+		}
 		if(id != null || noticeDate != null || executeDate != null) {
 			sb.append("（");
 			List<String> list = new ArrayList<>();

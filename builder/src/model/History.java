@@ -16,11 +16,13 @@ public abstract class History {
 			"(.+)省高级人民法院",
 	};
 
+	private static final String RegexDepartment = "国务院|财政部|国家税务总局";
+
 	public static final String[] RegexId = new String[]{
 			String.format("(%s)届主席令第(%s)号", Regex.ChineseNumber, Regex.ChineseNumber),
 			String.format("第(%s)届全国人民代表大会第(%s)次会议主席团公告第(%s)号", Regex.ChineseNumber, Regex.ChineseNumber, Regex.ChineseNumber),
 			String.format("(%s)届主席令第(%s)号", Regex.ChineseNumber, Regex.ChineseNumber),
-			String.format("国务院令第(%s)号", Regex.Number),
+			String.format("(%s)(、(%s))*令第(%s)号", RegexDepartment, RegexDepartment, Regex.Number),
 			String.format("法释〔[0-9]{4}〕(%s)号", Regex.Number),
 	};
 

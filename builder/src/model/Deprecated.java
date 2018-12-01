@@ -1,5 +1,7 @@
 package model;
 
+import document.DocumentDate;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "deprecated")
@@ -22,5 +24,9 @@ public class Deprecated {
 		}
 		sb.append("废止");
 		return sb.toString();
+	}
+
+	public void valid() {
+		DocumentDate.valid(date);
 	}
 }
