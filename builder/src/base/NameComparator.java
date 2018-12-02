@@ -46,10 +46,10 @@ public class NameComparator<T> implements Comparator<T>{
 			return ch1 - ch2;
 		}
 		if(i < s1.length()) {
-			return -1;
+			return 1;
 		}
 		if(j < s2.length()) {
-			return 1;
+			return -1;
 		}
 		return 0;
 	}
