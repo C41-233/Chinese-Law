@@ -1,45 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9094d2b9-b37a-4c54-b211-0858d663dac5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/商品税/关税/中华人民共和国海关进出口货物征税管理办法.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/商品税/关税/中华人民共和国进出口关税条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/商品税/城市维护建设税/中华人民共和国城市维护建设税暂行条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/商品税/增值税/中华人民共和国增值税暂行条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/商品税/消费税/中华人民共和国消费税暂行条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/商品税/消费税/中华人民共和国消费税暂行条例实施细则.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/商品税/烟叶税/中华人民共和国烟叶税暂行条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/商品税/烟叶税/中华人民共和国烟叶税法.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/商品税/船舶吨税/中华人民共和国船舶吨税暂行条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/商品税/船舶吨税/中华人民共和国船舶吨税法.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/商品税/营业税/中华人民共和国营业税暂行条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/商品税/营业税/中华人民共和国营业税暂行条例实施细则.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/商品税/车辆购置税/中华人民共和国车辆购置税暂行条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/所得税/个人所得税/中华人民共和国个人所得税法.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/所得税/个人所得税/中华人民共和国个人所得税法实施条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/所得税/企业所得税/中华人民共和国企业所得税法.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/所得税/企业所得税/中华人民共和国企业所得税法实施条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/税收管理/中华人民共和国发票管理办法.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/税收管理/中华人民共和国发票管理办法实施细则.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/税收管理/中华人民共和国税收征收管理法.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/税收管理/中华人民共和国税收征收管理法实施细则.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/税收管理/外商投资企业和外国企业适用增值税、消费税、营业税等税收暂行条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/财产税/土地使用税/中华人民共和国城镇土地使用税暂行条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/财产税/土地增值税/中华人民共和国土地增值税暂行条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/财产税/土地增值税/中华人民共和国土地增值税暂行条例实施细则.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/财产税/契税/中华人民共和国契税暂行条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/财产税/契税/中华人民共和国契税暂行条例细则.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/财产税/房产税/中华人民共和国房产税暂行条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/财产税/耕地占用税/中华人民共和国耕地占用税暂行条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/财产税/耕地占用税/中华人民共和国耕地占用税暂行条例实施细则.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/财产税/资源税/中华人民共和国资源税暂行条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/财产税/资源税/中华人民共和国资源税暂行条例实施细则.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/财产税/车船税/中华人民共和国车船税法.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/税务/财产税/车船税/中华人民共和国车船税法实施条例.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/财务/企业会计准则.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../documents/经济法/财务/企业财务通则.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="9094d2b9-b37a-4c54-b211-0858d663dac5" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,14 +33,15 @@
     <session id="302308419">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.37" value="1" />
+          <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -110,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/base/Archive.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="92" column="41" lean-forward="true" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
+            <state relative-caret-position="2052">
+              <caret line="92" column="41" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,8 +85,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/base/NameComparator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="38" column="25" lean-forward="true" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+            <state relative-caret-position="459">
+              <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
               <folding>
                 <element signature="e#231#232#0" expanded="true" />
                 <element signature="e#254#255#0" expanded="true" />
@@ -135,8 +98,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Amendment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="42" column="27" lean-forward="true" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+            <state relative-caret-position="1053">
+              <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -145,7 +108,7 @@
         <entry file="file://$PROJECT_DIR$/src/document/ArchiveCollection.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="243">
-              <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="31" />
+              <caret line="10" column="29" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -414,7 +377,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -460,6 +422,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -513,17 +476,18 @@
       <workItem from="1543585984371" duration="3736000" />
       <workItem from="1543666416283" duration="4429000" />
       <workItem from="1543734247095" duration="1854000" />
+      <workItem from="1544107634208" duration="868000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15631000" />
+    <option name="totallyTimeSpent" value="16499000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1721" height="935" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21346964" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21587493" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -624,6 +588,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/base/Archive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2052">
+          <caret line="92" column="41" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Amendment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1053">
+          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/document/ArchiveCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/document/ArchiveNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/History.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
@@ -670,41 +665,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Amendment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="42" column="27" lean-forward="true" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/document/ArchiveNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/document/ArchiveCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/base/Archive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="92" column="41" lean-forward="true" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/base/NameComparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="38" column="25" lean-forward="true" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+        <state relative-caret-position="459">
+          <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
           <folding>
             <element signature="e#231#232#0" expanded="true" />
             <element signature="e#254#255#0" expanded="true" />
