@@ -20,6 +20,10 @@ $(function(){
 			processDeprecated()
 		})
 		processDeprecated()
+		
+		$("#search").on("input", function(e){
+			search()
+		})
 	}
 	
 	function processDeprecated(){
@@ -31,5 +35,26 @@ $(function(){
 		}
 	}
 	
-	loadPage("collections/宪法-宪法.html")
+	function search(){
+		var val = $("#search").val()
+		function match(dom){
+			var d_name = dom.html()
+			if(val && d_name.indexOf(val) < 0){
+				return false
+			}
+			
+			return true
+		}
+		
+		$("#div-search-laws>div").each(function(){
+			if(match($(this))){
+				$(this).show()
+			}
+			else{
+				$(this).hide()
+			}
+		})
+	}
+	
+	loadPage("search.html")
 })

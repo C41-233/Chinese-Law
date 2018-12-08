@@ -1,17 +1,16 @@
 package base;
+import document.*;
+import model.ArchieveException;
+import model.Document;
+import org.apache.commons.io.FileUtils;
+
+import javax.xml.bind.JAXBException;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
-
-import javax.xml.bind.JAXBException;
-
-import document.*;
-import org.apache.commons.io.FileUtils;
-
-import model.ArchieveException;
-import model.Document;
 
 public class Archive {
 
@@ -38,6 +37,8 @@ public class Archive {
 				throw new ArchieveException("《%s》的替代文件《%s》不存在", law.name, document);
 			}
 		}
+
+		laws.sort(Comparator.comparing(l -> l.name));
 	}
 
 	public List<Law> getLaws(){

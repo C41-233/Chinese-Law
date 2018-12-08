@@ -1,0 +1,26 @@
+<style type="text/css">
+	#search{
+		padding-left: 25px;
+		padding-right: 25px;
+		text-align: center;
+	}
+	#search-icon{
+		position: absolute;
+		right: 25px;
+		top: 10px;
+		cursor:pointer;
+	}
+</style>
+
+<div class="row">
+	<div class="col-lg-12 form-group">
+		<input type="text" class="form-control" id="search"/>
+		<i class="glyphicon glyphicon-search" id="search-icon"></i>
+		
+		<div id="div-search-laws">
+			<#list laws as law>
+				<div class="<#if law.deprecated>deprecated</#if>">《${law.name}》</div>
+			</#list>
+		</div>
+	</div>
+</div>

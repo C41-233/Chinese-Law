@@ -1,21 +1,19 @@
-import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
-
-import javax.xml.bind.JAXBException;
-
-import org.apache.commons.io.FileUtils;
-
 import base.Archive;
 import base.Config;
 import document.ArchiveCollection;
 import document.ArchiveNode;
 import freemarker.template.TemplateException;
 import model.ArchieveException;
+import org.apache.commons.io.FileUtils;
 import page.IPage;
 import page.PageLocal;
 import page.PageNational;
 import template.TemplateBuilder;
+
+import javax.xml.bind.JAXBException;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
 
 public class Main {
 
@@ -29,14 +27,26 @@ public class Main {
 		PageLocal pageLocal = new PageLocal(archive.getLaws());
 		outputPage(pageLocal);
 
-		File templateIndex = new File(Config.TemplateInputPath, "index.template.html");
-		HashMap<String, Object> vo = new HashMap<>();
-		vo.put("nationals", pageNational);
-		vo.put("locals", pageLocal);
-		
-		String content = TemplateBuilder.generate(templateIndex , vo);
-		File outputIndex = new File(Config.OutputRoot, "index.html");
-		FileUtils.write(outputIndex, content, "utf-8");
+		{
+			HashMap<String, Object> vo = new HashMap<>();
+			vo.put("nationals", pageNational);
+			vo.put("locals", pageLocal);
+
+			outputTemplate("index.template.html", "index.html", vo);
+		}
+		{
+			HashMap<String, Object> vo = new HashMap<>();
+			vo.put("laws", archive.getLaws());
+
+			outputTemplate("search.template.html", "search.html", vo);
+		}
+	}
+
+	private static void outputTemplate(String templateFileName, String outputFileName, HashMap<String, Object> args) throws IOException, TemplateException {
+		File templateFile = new File(Config.TemplateInputPath, templateFileName);
+		File outputFile = new File(Config.OutputRoot, outputFileName);
+		String content = TemplateBuilder.generate(templateFile, args);
+		FileUtils.write(outputFile, content, "utf-8");
 	}
 
 	private static void outputPage(IPage page) throws IOException, TemplateException {
