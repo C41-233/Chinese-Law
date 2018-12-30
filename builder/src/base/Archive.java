@@ -73,7 +73,7 @@ public class Archive {
 			String content = FileUtils.readFileToString(documentFile, "utf-8");
 			String filename = documentFile.getName();
 			if(!filename.endsWith(".xml")) {
-				throw new ArchieveException("%s 文件名不符合规范", filename);
+				throw new ArchieveException("%s 文件名不符合规范", documentFile.getAbsolutePath());
 			}
 			String name = filename.substring(0, filename.length() - 4);
 			Law law = new Law(collection, name);
