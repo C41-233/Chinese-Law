@@ -89,5 +89,8 @@ public class Law {
 	public List<String> getCategoryPath(){
 		return document == null ? null : document.category.getPath();
 	}
-	
+
+	public String getPath(){
+		return parent.getPath();
+	}
 }

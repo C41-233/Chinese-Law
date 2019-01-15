@@ -1,14 +1,10 @@
 package page;
 
+import document.*;
+import model.ArchieveException;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import document.ArchiveCollection;
-import document.ArchiveNode;
-import document.ArchiveRoot;
-import document.IArchieveNode;
-import document.Law;
-import model.ArchieveException;
 
 public class PageLocal implements IPage{
 
@@ -32,9 +28,9 @@ public class PageLocal implements IPage{
 	private void createCollection(Law law) {
 		List<String> paths = law.getCategoryPath();
 		if(paths == null) {
-			throw new ArchieveException("�ط������������ط�·����%s", law.name);
+			throw new ArchieveException("路径错误：%s", law.name);
 		}
-		ArchiveRoot root = getOrCreateRoot(paths.get(0)); //ʡ
+		ArchiveRoot root = getOrCreateRoot(paths.get(0));
 
 		if(paths.size() <= 1) {
 			ArchiveNode node = getOrCreateNode(root, root.getName());

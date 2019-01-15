@@ -19,7 +19,7 @@
 		
 		<div id="div-search-laws">
 			<#list laws as law>
-				<div class="<#if law.deprecated>deprecated</#if>">《${law.name}》</div>
+				<div class="<#if law.deprecated>deprecated</#if>" title="${law.path}">《${law.name}》</div>
 			</#list>
 		</div>
 	</div>
