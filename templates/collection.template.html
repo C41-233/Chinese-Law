@@ -26,6 +26,15 @@
 					<#if law.deprecated><span class="badge">失效</span></#if>
 				</h2>
 				<div class="small">
+					<div>
+						<#if law.shortName??><small>《${law.shortName}》</small></#if>
+						<#if law.englishName??><small>${law.englishName}</small></#if>
+					</div>
+					<div>
+						<#if law.participation??>
+							${law.participation}
+						</#if>
+					</div>
 					<#if law.histories??>
 						<#list law.histories as history>
 							<div>${history}</div>

@@ -23,4 +23,17 @@ public final class Regex {
         return false;
     }
 
+    public static boolean isValidName(String name){
+        if(name.contains("(") || name.contains(")")) {
+            return false;
+        }
+        if(name.contains(" ")){
+            return false;
+        }
+        if(name.contains("《") || name.contains("》")){
+            return false;
+        }
+        return true;
+    }
+
 }

@@ -31,12 +31,9 @@ public class PageLocal implements IPage{
 			throw new ArchieveException("路径错误：%s", law.name);
 		}
 		ArchiveRoot root = getOrCreateRoot(paths.get(0));
-
-		if(paths.size() <= 1) {
-			ArchiveNode node = getOrCreateNode(root, root.getName());
-			fillNodes(node, law);
-			return;
-		}
+		ArchiveNode node = getOrCreateNode(root, root.getName());
+		fillNodes(node, law);
+		return;
 	}
 	
 	private void fillNodes(ArchiveNode root, Law law) {

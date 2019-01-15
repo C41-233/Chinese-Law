@@ -14,6 +14,7 @@ public abstract class History {
 			String.format("最高人民法院审判委员会第(%s)次会议", Regex.Number),
 			String.format("国务院第(%s)次常务会议", Regex.Number),
 			"(.+)省高级人民法院",
+            "海牙国际私法会议",
 	};
 
 	private static final String RegexDepartment = "国务院|财政部|国家税务总局";
@@ -25,6 +26,8 @@ public abstract class History {
 			String.format("(%s)(、(%s))*令第(%s)号", RegexDepartment, RegexDepartment, Regex.Number),
 			String.format("法释〔[0-9]{4}〕(%s)号", Regex.Number),
 	};
+
+    public Document root;
 
 	@XmlElement(name = "create-date")
 	public String createDate;

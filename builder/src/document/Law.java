@@ -3,6 +3,7 @@ package document;
 import model.Deprecated;
 import model.Document;
 import model.History;
+import model.Participation;
 
 import java.util.List;
 
@@ -72,6 +73,27 @@ public class Law {
 		return document.deprecated;
 	}
 
+	public String getShortName(){
+		if(document == null){
+			return null;
+		}
+		return document.shortName;
+	}
+
+	public String getEnglishName(){
+		if(document == null) {
+			return null;
+		}
+		return document.englishName;
+	}
+
+	public Participation getParticipation(){
+		if(document == null){
+			return null;
+		}
+		return document.participation;
+	}
+
 	public ArchiveCollection getParent() {
 		return parent;
 	}
@@ -85,7 +107,12 @@ public class Law {
 	public boolean isLocal() {
 		return document != null && document.category.isLocal();
 	}
-	
+
+	//国际条约
+	public boolean isInternational() {
+		return document != null && document.category.isInternational();
+	}
+
 	public List<String> getCategoryPath(){
 		return document == null ? null : document.category.getPath();
 	}
@@ -93,4 +120,5 @@ public class Law {
 	public String getPath(){
 		return parent.getPath();
 	}
+
 }

@@ -1,0 +1,22 @@
+<document>
+	<category id="法律"/>
+	<histories>
+		<revision>
+			<create-date>1979年7月1日</create-date>
+			<organization>第五届全国人民代表大会第二次会议</organization>
+			<execute-date>1979年7月1日</execute-date>
+		</revision>
+		<amendment>
+			<create-date>1996年3月17日</create-date>
+			<organization>第八届全国人民代表大会第四次会议</organization>
+			<notice>全国人民代表大会关于修改〈中华人民共和国刑事诉讼法〉的决定</notice>
+			<id>八届主席令第六十四号</id>
+			<execute-date>1996年3月17日</execute-date>
+		</amendment>
+	</histories>
+	<participation>
+		<create-date>1997年7月3日</create-date>
+		<organization>第八届全国人民代表大会常务委员会第二十六次会议</organization>
+		<notice>全国人民代表大会常务委员会关于我国加入〈关于从国外调取民事或商事证据的公约〉的决定</notice>
+	</participation>
+</document>

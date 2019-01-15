@@ -29,7 +29,12 @@ public class Revision extends History{
 				list.add(noticeDate + "公布");
 			}
 			if(executeDate != null){
-				list.add("自" + executeDate + "起施行");
+				if(root.isInternational()){
+					list.add(executeDate + "生效");
+				}
+				else{
+					list.add("自" + executeDate + "起施行");
+				}
 			}
 			sb.append(String.join("，", list));
 			sb.append("）");

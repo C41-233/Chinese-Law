@@ -77,16 +77,14 @@ public class Archive {
 			}
 			String name = filename.substring(0, filename.length() - 4);
 			Law law = new Law(collection, name);
-			if(law.name.contains("(") || law.name.contains(")")
-					|| law.name.contains(" ")
-					|| law.name.contains("《") || law.name.contains("》")
-			) {
+			if(!Regex.isValidName(name)) {
 				throw new ArchieveException("法律名称非法字符：%s", law.name);
 			}
 			if(content.length() > 0) {
 				Document document = DocumentReader.read(documentFile);
 				law.setDocument(document);
 			}
+
 			laws.add(law);
 			lawNames.add(law.name);
 			collection.laws.add(law);

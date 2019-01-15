@@ -6,6 +6,7 @@ import freemarker.template.TemplateException;
 import model.ArchieveException;
 import org.apache.commons.io.FileUtils;
 import page.IPage;
+import page.PageInternational;
 import page.PageLocal;
 import page.PageNational;
 import template.TemplateBuilder;
@@ -27,10 +28,14 @@ public class Main {
 		PageLocal pageLocal = new PageLocal(archive.getLaws());
 		outputPage(pageLocal);
 
+        PageInternational pageInternational = new PageInternational(archive.getLaws());
+        outputPage(pageInternational);
+
 		{
 			HashMap<String, Object> vo = new HashMap<>();
 			vo.put("nationals", pageNational);
 			vo.put("locals", pageLocal);
+            vo.put("internationals", pageInternational);
 
 			outputTemplate("index.template.html", "index.html", vo);
 		}

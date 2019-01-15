@@ -10,7 +10,7 @@ import java.util.List;
 @XmlRootElement(name = "category")
 public class Category {
 
-	public static final String CategoryRegex = "宪法|法律|国家规范性文件|行政法规|部门规章|司法解释|党章|地方(司法文件)";
+	public static final String CategoryRegex = "宪法|法律|国家规范性文件|行政法规|部门规章|司法解释|党章|地方(司法文件)|国际公约";
 
 	@XmlAttribute(name = "id")
 	public String id;
@@ -32,10 +32,14 @@ public class Category {
 		return id.startsWith("地方");
 	}
 
+	public boolean isInternational() {
+		return id.startsWith("国际");
+	}
+
 	public List<String> getPath() {
 		List<String> paths = new ArrayList<>();
 		Collections.addAll(paths, path.split("\\w"));
 		return paths;
 	}
-	
+
 }
