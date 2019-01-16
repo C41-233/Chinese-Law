@@ -25,7 +25,7 @@ public class Category {
 	}
 
 	public boolean isNational() {
-		return !id.startsWith("地方");
+		return !id.startsWith("地方") && !id.startsWith("国际");
 	}
 
 	public boolean isLocal() {
