@@ -7,6 +7,7 @@
 			<create-date>1979年7月1日</create-date>
 			<organization>第五届全国人民代表大会第二次会议</organization>
 			<execute-date>1979年7月1日</execute-date>
+			<id>国务院令第511号</id>
 		</revision>
 		<amendment>
 			<create-date>1996年3月17日</create-date>
@@ -16,6 +17,11 @@
 			<execute-date>1996年3月17日</execute-date>
 		</amendment>
 	</histories>
+	<deprecated>
+		<date>2017年11月19日</date>>
+		<document>中华人民共和国耕地占用税法</document>
+		<notice>国务院关于废止〈中华人民共和国营业税暂行条例〉和修改〈中华人民共和国增值税暂行条例〉的决定</notice>
+	</deprecated>
 	<participation>
 		<create-date>1997年7月3日</create-date>
 		<organization>第八届全国人民代表大会常务委员会第二十六次会议</organization>
