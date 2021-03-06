@@ -1,30 +1,38 @@
 <document>
-	<en-name>Convention on the Taking of Evidence Abroad in Civil or Commercial Matters</en-name>
-	<short-name>国外取证公约</short-name>
-	<category id="法律"/>
+	<en-name>英文名（国际公约、条约）</en-name>
+	<short-name>简称</short-name>
+	<!--修订、修正历史-->
 	<histories>
+		<!--修订-->
 		<revision>
-			<create-date>1979年7月1日</create-date>
-			<organization>第五届全国人民代表大会第二次会议</organization>
-			<execute-date>1979年7月1日</execute-date>
-			<id>国务院令第511号</id>
+			<create-date>修订日期</create-date>
+			<organization>修订组织</organization>
+			<execute-date>施行日期</execute-date>
+			<id>修订文件号</id>
 		</revision>
+		<!--修正-->
 		<amendment>
-			<create-date>1996年3月17日</create-date>
-			<organization>第八届全国人民代表大会第四次会议</organization>
-			<notice>全国人民代表大会关于修改〈中华人民共和国刑事诉讼法〉的决定</notice>
-			<id>八届主席令第六十四号</id>
-			<execute-date>1996年3月17日</execute-date>
+			<create-date>修正日起</create-date>
+			<organization>修正组织</organization>
+			<notice>修正文件</notice>
+			<id>修正文件号</id>
+			<execute-date>施行日期</execute-date>
 		</amendment>
 	</histories>
+	<!--废止-->
 	<deprecated>
-		<date>2017年11月19日</date>>
-		<document>中华人民共和国耕地占用税法</document>
-		<notice>国务院关于废止〈中华人民共和国营业税暂行条例〉和修改〈中华人民共和国增值税暂行条例〉的决定</notice>
+		<date>废止日期</date>
+		<document>被替代的文件</document>
+		<notice>废止文件</notice>
 	</deprecated>
+	<!--失效-->
+	<deprecated>
+		<date>失效日期</date>
+	</deprecated>
+	<!--国家公约、条约批准情况-->
 	<participation>
-		<create-date>1997年7月3日</create-date>
-		<organization>第八届全国人民代表大会常务委员会第二十六次会议</organization>
-		<notice>全国人民代表大会常务委员会关于我国加入〈关于从国外调取民事或商事证据的公约〉的决定</notice>
+		<create-date>批准日期</create-date>
+		<organization>批准组织</organization>
+		<notice>批准文件</notice>
 	</participation>
 </document>
