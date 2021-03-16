@@ -9,12 +9,15 @@
 			<notice-date>发布日期</notice-date>
 			<organization>
 				修订组织
-				国务院第XXX次常务会议
+				第X届全国人民代表大会第X次会议
+				国务院第xxx次常务会议
+				中国共产党第XX次全国代表大会
+				最高人民法院审判委员会第xxx次会议
 			</organization>
 			<execute-date>施行日期</execute-date>
 			<id>
 				修订文件号
-				国务院令第XXX号
+				国务院令第xxx号
 			</id>
 		</revision>
 		<!--修正-->
