@@ -6,7 +6,6 @@
 		<!--修订-->
 		<revision>
 			<create-date>修订日期，通过日期</create-date>
-			<notice-date>发布日期</notice-date>
 			<organization>
 				修订组织
 				第X届全国人民代表大会第X次会议
@@ -14,18 +13,20 @@
 				中国共产党第XX次全国代表大会
 				最高人民法院审判委员会第xxx次会议
 			</organization>
-			<execute-date>施行日期</execute-date>
+			<notice-date>发布日期</notice-date>
 			<id>
 				修订文件号
 				国务院令第xxx号
 			</id>
+			<execute-date>施行日期</execute-date>
 		</revision>
 		<!--修正-->
 		<amendment>
-			<create-date>修正日起</create-date>
+			<create-date>修正日期</create-date>
 			<organization>修正组织</organization>
-			<notice>修正文件</notice>
+			<notice-date>发布日期</notice-date>
 			<id>修正文件号</id>
+			<notice>修正文件</notice>
 			<execute-date>施行日期</execute-date>
 		</amendment>
 	</histories>
