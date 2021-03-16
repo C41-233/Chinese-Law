@@ -5,10 +5,17 @@
 	<histories>
 		<!--修订-->
 		<revision>
-			<create-date>修订日期</create-date>
-			<organization>修订组织</organization>
+			<create-date>修订日期，通过日期</create-date>
+			<notice-date>发布日期</notice-date>
+			<organization>
+				修订组织
+				国务院第XXX次常务会议
+			</organization>
 			<execute-date>施行日期</execute-date>
-			<id>修订文件号</id>
+			<id>
+				修订文件号
+				国务院令第XXX号
+			</id>
 		</revision>
 		<!--修正-->
 		<amendment>
