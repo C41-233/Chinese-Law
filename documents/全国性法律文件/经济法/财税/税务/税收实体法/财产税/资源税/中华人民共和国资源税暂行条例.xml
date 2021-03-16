@@ -1,0 +1,23 @@
+<document>
+	<histories>
+		<revision>
+			<create-date>1993年11月26日</create-date>
+			<organization>国务院第12次常务会议</organization>
+			<notice-date>1993年12月25日</notice-date>
+			<id>国务院令第139号</id>
+			<execute-date>1994年1月1日</execute-date>
+		</revision>
+		<amendment>
+			<create-date>2011年9月21日</create-date>
+			<organization>国务院第173次常务会议</organization>
+			<notice-date>2011年9月30日</notice-date>
+			<id>国务院令第605号</id>
+			<notice>国务院关于修改《中华人民共和国资源税暂行条例》的决定</notice>
+			<execute-date>2011年11月1日</execute-date>
+		</amendment>
+	</histories>
+	<deprecated>
+		<date>2020年9月1日</date>
+		<document>中华人民共和国资源税法</document>
+	</deprecated>
+</document>
