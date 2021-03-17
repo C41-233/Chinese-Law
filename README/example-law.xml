@@ -17,6 +17,7 @@
 			<id>
 				修订文件号
 				国务院令第xxx号
+				法释〔xxxx〕xx号
 			</id>
 			<execute-date>施行日期</execute-date>
 		</revision>
@@ -35,6 +36,7 @@
 		<date>废止日期</date>
 		<document>被替代的文件</document>
 		<notice>废止文件</notice>
+		<notice-id>废止文件号</notice-id>
 	</deprecated>
 	<!--失效-->
 	<deprecated>

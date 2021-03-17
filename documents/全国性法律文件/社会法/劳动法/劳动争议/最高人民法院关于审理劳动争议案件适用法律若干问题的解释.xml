@@ -1,0 +1,24 @@
+<document>
+	<histories>
+		<revision>
+			<create-date>2001年3月22日</create-date>
+			<organization>最高人民法院审判委员会第1165次会议</organization>
+			<notice-date>2001年4月16日</notice-date>
+			<id>法释〔2001〕14号</id>
+			<execute-date>2001年4月30日</execute-date>
+		</revision>
+		<amendment>
+			<create-date>2008年12月8日</create-date>
+			<organization>最高人民法院审判委员会第1457次会议</organization>
+			<notice-date>2008年12月16日</notice-date>
+			<id>法释〔2008〕18号</id>
+			<notice>最高人民法院关于调整司法解释等文件中引用《中华人民共和国民事诉讼法》条文序号的决定</notice>
+			<execute-date>2008年12月31日</execute-date>
+		</amendment>
+	</histories>
+	<deprecated>
+		<date>2021年1月1日</date>
+		<notice>最高人民法院关于废止部分司法解释及相关规范性文件的决定</notice>
+		<notice-id>法释〔2020〕16号</notice-id>
+	</deprecated>
+</document>
