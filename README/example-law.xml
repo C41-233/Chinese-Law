@@ -39,9 +39,9 @@
 		<notice-id>废止文件号</notice-id>
 	</deprecated>
 	<!--失效-->
-	<deprecated>
+	<invalid>
 		<date>失效日期</date>
-	</deprecated>
+	</invalid>
 	<!--国家公约、条约批准情况-->
 	<participation>
 		<create-date>批准日期</create-date>
