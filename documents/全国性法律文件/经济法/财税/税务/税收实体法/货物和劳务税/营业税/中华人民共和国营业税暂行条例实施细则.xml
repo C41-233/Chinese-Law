@@ -1,15 +1,17 @@
 <document>
 	<histories>
 		<revision>
-			<notice-date>2008年12月18日</notice-date>
-			<execute-date>2009年1月1日</execute-date>
+			<create-date>2008年12月18日</create-date>
+			<organization>财政部、国家税务总局</organization>
 			<id>财政部、国家税务总局令第52号</id>
+			<execute-date>2009年1月1日</execute-date>
 		</revision>
 		<amendment>
-			<notice-date>2011年10月28日</notice-date>
-			<execute-date>2011年11月1日</execute-date>
+			<create-date>2011年10月28日</create-date>
+			<organization>财政部、国家税务总局</organization>
+			<id>财政部令第65号</id>
 			<notice>财政部关于修改〈中华人民共和国增值税暂行条例实施细则〉和〈中华人民共和国营业税暂行条例实施细则〉的决定</notice>
-			<id>财政部、国家税务总局令第65号</id>
+			<execute-date>2011年11月1日</execute-date>
 		</amendment>
 	</histories>
 </document>
