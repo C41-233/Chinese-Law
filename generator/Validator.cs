@@ -14,6 +14,8 @@ namespace Generator
         {
             root = new ValidatorNode("document");
 
+            var enName = new ValidatorNode("en-name");
+            var shortName = new ValidatorNode("short-name");
             var histories = new ValidatorNode("histories");
             var revision = new ValidatorNode("revision");
             var createDate = new ValidatorNode("create-date");
@@ -25,9 +27,17 @@ namespace Generator
 
             var amendment = new ValidatorNode("amendment");
 
+            root.AddChild(new ValidatorChild(enName)
+            {
+                Required = false,
+            });
+            root.AddChild(new ValidatorChild(shortName)
+            {
+                Required = false,
+            });
             root.AddChild(new ValidatorChild(histories)
             {
-                Required = true,
+                Required = false,
             });
 
             histories.AddChild(new ValidatorChild(revision)
@@ -98,6 +108,8 @@ namespace Generator
             id.SetBody("");
             noticeDate.SetBody(datePattern);
             executeDate.SetBody(datePattern);
+            enName.SetBody("");
+            shortName.SetBody("");
         }
 
         public static void Process(XmlElement e)
