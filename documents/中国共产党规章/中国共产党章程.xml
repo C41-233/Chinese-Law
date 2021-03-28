@@ -1,39 +1,103 @@
 <document>
 	<histories>
 		<revision>
+			<create-date>1922年7月16日</create-date>
+			<organization>中国共产党第二次全国代表大会</organization>
+			<execute-date>1922年7月16日</execute-date>
+		</revision>
+		<amendment>
+			<create-date>1923年6月20日</create-date>
+			<organization>中国共产党第三次全国代表大会</organization>
+			<notice>中国共产党第一次修正章程</notice>
+			<execute-date>1923年6月20日</execute-date>
+		</amendment>
+		<amendment>
+			<create-date>1925年1月22日</create-date>
+			<organization>中国共产党第四次全国代表大会</organization>
+			<notice>中国共产党第二次修正章程</notice>
+			<execute-date>1925年1月22日</execute-date>
+		</amendment>
+		<amendment>
+			<create-date>1927年6月1日</create-date>
+			<organization>中共中央政治局</organization>
+			<notice>中国共产党第三次修正章程</notice>
+			<execute-date>1927年6月1日</execute-date>
+		</amendment>
+		<revision>
+			<create-date>1928年7月11日</create-date>
+			<organization>中国共产党第六次全国代表大会</organization>
+			<execute-date>1928年7月11日</execute-date>
+		</revision>
+		<revision>
+			<create-date>1945年4月23日</create-date>
+			<organization>中国共产党第七次全国代表大会</organization>
+			<execute-date>1945年4月23日</execute-date>
+		</revision>
+		<revision>
+			<create-date>1956年9月26日</create-date>
+			<organization>中国共产党第八次全国代表大会</organization>
+			<execute-date>1956年9月26日</execute-date>
+		</revision>
+		<revision>
+			<create-date>1969年4月14日</create-date>
+			<organization>中国共产党第九次全国代表大会</organization>
+			<execute-date>1969年4月14日</execute-date>
+		</revision>
+		<revision>
+			<create-date>1973年8月28日</create-date>
+			<organization>中国共产党第十次全国代表大会</organization>
+			<execute-date>1973年8月28日</execute-date>
+		</revision>
+		<revision>
+			<create-date>1977年8月18日</create-date>
+			<organization>中国共产党第十一次全国代表大会</organization>
+			<execute-date>1977年8月18日</execute-date>
+		</revision>
+		<revision>
 			<create-date>1982年9月6日</create-date>
 			<organization>中国共产党第十二次全国代表大会</organization>
+			<execute-date>1982年9月6日</execute-date>
 		</revision>
 		<amendment>
 			<create-date>1987年11月1日</create-date>
 			<organization>中国共产党第十三次全国代表大会</organization>
-			<notice>中国共产党章程部分条文修正案</notice>
+			<notice>关于《中国共产党党章部分条文修正案》的决议</notice>
+			<execute-date>1987年11月1日</execute-date>
 		</amendment>
-		<amendment>
+		<revision>
 			<create-date>1992年10月18日</create-date>
 			<organization>中国共产党第十四次全国代表大会</organization>
-		</amendment>
+			<execute-date>1992年10月18日</execute-date>
+		</revision>
 		<amendment>
 			<create-date>1997年9月18日</create-date>
 			<organization>中国共产党第十五次全国代表大会</organization>
 			<notice>中国共产党章程修正案</notice>
-			<execute>1997年9月18日</execute>
+			<execute-date>1997年9月18日</execute-date>
 		</amendment>
 		<amendment>
 			<create-date>2002年11月14日</create-date>
 			<organization>中国共产党第十六次全国代表大会</organization>
+			<notice>关于《中国共产党章程（修正案）》的决议</notice>
+			<execute-date>2002年11月14日</execute-date>
 		</amendment>
 		<amendment>
 			<create-date>2007年10月21日</create-date>
 			<organization>中国共产党第十七次全国代表大会</organization>
+			<notice>关于《中国共产党章程（修正案）》的决议</notice>
+			<execute-date>2007年10月21日</execute-date>
 		</amendment>
 		<amendment>
 			<create-date>2012年11月14日</create-date>
 			<organization>中国共产党第十八次全国代表大会</organization>
+			<notice>关于《中国共产党章程（修正案）》的决议</notice>
+			<execute-date>2012年11月14日</execute-date>
 		</amendment>
 		<amendment>
 			<create-date>2017年10月24日</create-date>
 			<organization>中国共产党第十九次全国代表大会</organization>
+			<notice>关于《中国共产党章程（修正案）》的决议</notice>
+			<execute-date>2017年10月24日</execute-date>
 		</amendment>
 	</histories>
 </document>

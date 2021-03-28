@@ -1,17 +1,19 @@
 <document>
-	<category id="宪法"/>
 	<histories>
 		<revision>
 			<create-date>1954年9月20日</create-date>
 			<organization>第一届全国人民代表大会第一次会议</organization>
+			<execute-date>1954年9月20日</execute-date>
 		</revision>
 		<revision>
 			<create-date>1975年1月17日</create-date>
 			<organization>第四届全国人民代表大会第一次会议</organization>
+			<execute-date>1975年1月17日</execute-date>
 		</revision>
 		<revision>
 			<create-date>1978年3月5日</create-date>
 			<organization>第五届全国人民代表大会第一次会议</organization>
+			<execute-date>1978年3月5日</execute-date>
 		</revision>
 		<revision>
 			<create-date>1982年12月4日</create-date>
