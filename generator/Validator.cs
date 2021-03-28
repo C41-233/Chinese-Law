@@ -18,6 +18,7 @@ namespace Generator
             var revision = new ValidatorNode("revision");
             var createDate = new ValidatorNode("create-date");
             var organization = new ValidatorNode("organization");
+            var noticeDate = new ValidatorNode("notice-date");
             var notice = new ValidatorNode("notice");
             var id = new ValidatorNode("id");
             var executeDate = new ValidatorNode("execute-date");
@@ -52,6 +53,10 @@ namespace Generator
             {
                 Required = true,
             });
+            revision.AddChild(new ValidatorChild(noticeDate)
+            {
+                Required = false,
+            });
             revision.AddChild(new ValidatorChild(id)
             {
                 Required = false,
@@ -68,6 +73,10 @@ namespace Generator
             amendment.AddChild(new ValidatorChild(organization)
             {
                 Required = true,
+            });
+            revision.AddChild(new ValidatorChild(noticeDate)
+            {
+                Required = false,
             });
             amendment.AddChild(new ValidatorChild(id)
             {
@@ -87,6 +96,7 @@ namespace Generator
             organization.SetBody("");
             notice.SetBody("");
             id.SetBody("");
+            noticeDate.SetBody(datePattern);
             executeDate.SetBody(datePattern);
         }
 
