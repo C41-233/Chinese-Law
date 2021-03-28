@@ -39,6 +39,11 @@ namespace Generator
 
         private static void DoFile(string file)
         {
+            if (!file.EndsWith(".xml"))
+            {
+                Console.WriteLine($"错误的文件{file}");
+                return;
+            }
             var fileInfo = new FileInfo(file);
             if (names.TryGetValue(fileInfo.Name, out var old))
             {
