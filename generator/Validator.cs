@@ -24,6 +24,7 @@ namespace Generator
             var noticeDate = new ValidatorNode("notice-date");
             var notice = new ValidatorNode("notice");
             var id = new ValidatorNode("id");
+            var noticeId = new ValidatorNode("notice-id");
             var executeDate = new ValidatorNode("execute-date");
             var participation = new ValidatorNode("participation");
             var joinDate = new ValidatorNode("join-date");
@@ -134,9 +135,11 @@ namespace Generator
             {
                 Required = true,
             });
+            deprecated.AddChild(new ValidatorChild(notice));
+            deprecated.AddChild(new ValidatorChild(noticeId));
             deprecated.AddChild(new ValidatorChild(document)
             {
-                Required = true
+                Required = false
             });
 
             const string datePattern = "[0-9]{4}年([1-9]|1[0-2])月([1-9]|[1-2][0-9]|3[0-1])日";
@@ -151,6 +154,7 @@ namespace Generator
             joinDate.SetBody(datePattern);
             date.SetBody(datePattern);
             document.SetBody("");
+            noticeId.SetBody("");
         }
 
         public static void Process(XmlElement e)
