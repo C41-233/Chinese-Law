@@ -142,7 +142,7 @@ namespace Generator
                         continue;
                     }
                 }
-                else if (lastValidateNode != null && lastValidateNode.Any)
+                else if (lastValidateNode != null && lastValidateNode.Any && lastValidateNode.Name == childNode.Name)
                 {
                     iChild--;
                     continue;
