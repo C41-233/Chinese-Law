@@ -52,6 +52,10 @@ namespace Generator
             {
                 Required = true,
             });
+            revision.AddChild(new ValidatorChild(id)
+            {
+                Required = false,
+            });
             revision.AddChild(new ValidatorChild(executeDate)
             {
                 Required = true,
@@ -65,13 +69,13 @@ namespace Generator
             {
                 Required = true,
             });
-            amendment.AddChild(new ValidatorChild(notice)
-            {
-                Required = true,
-            });
             amendment.AddChild(new ValidatorChild(id)
             {
                 Required = false,
+            });
+            amendment.AddChild(new ValidatorChild(notice)
+            {
+                Required = true,
             });
             amendment.AddChild(new ValidatorChild(executeDate)
             {
@@ -149,7 +153,7 @@ namespace Generator
                 }
                 else if (validateNode.Required)
                 {
-                    throw new XmlException($"should <{validateNode.Name}> but <{childNode.Name}> in <{element.Name}>[{index}]");
+                    throw new XmlException($"should <{validateNode.Name}> but <{childNode.Name}> in <{element.Name}>[{position}]");
                 }
 
                 iChild++;
