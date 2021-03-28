@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
-using System.Xml.Schema;
 
 namespace Generator
 {
@@ -40,9 +35,17 @@ namespace Generator
             }
         }
 
+        private static readonly Dictionary<string, string> names = new Dictionary<string, string>();
+
         private static void DoFile(string file)
         {
             var fileInfo = new FileInfo(file);
+            if (names.TryGetValue(fileInfo.Name, out var old))
+            {
+                Console.WriteLine($"重复文件{file} {old}");
+                return;
+            }
+            names.Add(fileInfo.Name, file);
             if (fileInfo.Length == 0)
             {
                 return;
