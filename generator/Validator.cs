@@ -18,14 +18,15 @@ namespace Generator
             var shortName = new ValidatorNode("short-name");
             var histories = new ValidatorNode("histories");
             var revision = new ValidatorNode("revision");
+            var amendment = new ValidatorNode("amendment");
             var createDate = new ValidatorNode("create-date");
             var organization = new ValidatorNode("organization");
             var noticeDate = new ValidatorNode("notice-date");
             var notice = new ValidatorNode("notice");
             var id = new ValidatorNode("id");
             var executeDate = new ValidatorNode("execute-date");
-
-            var amendment = new ValidatorNode("amendment");
+            var participation = new ValidatorNode("participation");
+            var joinDate = new ValidatorNode("join-date");
 
             root.AddChild(new ValidatorChild(enName)
             {
@@ -36,6 +37,10 @@ namespace Generator
                 Required = false,
             });
             root.AddChild(new ValidatorChild(histories)
+            {
+                Required = false,
+            });
+            root.AddChild(new ValidatorChild(participation)
             {
                 Required = false,
             });
@@ -101,6 +106,23 @@ namespace Generator
                 Required = true,
             });
 
+            participation.AddChild(new ValidatorChild(joinDate)
+            {
+                Required = true,
+            });
+            participation.AddChild(new ValidatorChild(executeDate)
+            {
+                Required = true,
+            });
+            participation.AddChild(new ValidatorChild(organization)
+            {
+                Required = true,
+            });
+            participation.AddChild(new ValidatorChild(notice)
+            {
+                Required = false,
+            });
+
             const string datePattern = "[0-9]{4}年([1-9]|1[0-2])月([1-9]|[1-2][0-9]|3[0-1])日";
             createDate.SetBody(datePattern);
             organization.SetBody("");
@@ -110,6 +132,7 @@ namespace Generator
             executeDate.SetBody(datePattern);
             enName.SetBody("");
             shortName.SetBody("");
+            joinDate.SetBody(datePattern);
         }
 
         public static void Process(XmlElement e)
