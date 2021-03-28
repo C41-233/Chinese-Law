@@ -27,6 +27,9 @@ namespace Generator
             var executeDate = new ValidatorNode("execute-date");
             var participation = new ValidatorNode("participation");
             var joinDate = new ValidatorNode("join-date");
+            var date = new ValidatorNode("date");
+            var deprecated = new ValidatorNode("deprecated");
+            var document = new ValidatorNode("document");
 
             root.AddChild(new ValidatorChild(enName)
             {
@@ -41,6 +44,10 @@ namespace Generator
                 Required = false,
             });
             root.AddChild(new ValidatorChild(participation)
+            {
+                Required = false,
+            });
+            root.AddChild(new ValidatorChild(deprecated)
             {
                 Required = false,
             });
@@ -89,7 +96,7 @@ namespace Generator
             {
                 Required = true,
             });
-            revision.AddChild(new ValidatorChild(noticeDate)
+            amendment.AddChild(new ValidatorChild(noticeDate)
             {
                 Required = false,
             });
@@ -123,6 +130,15 @@ namespace Generator
                 Required = false,
             });
 
+            deprecated.AddChild(new ValidatorChild(date)
+            {
+                Required = true,
+            });
+            deprecated.AddChild(new ValidatorChild(document)
+            {
+                Required = true
+            });
+
             const string datePattern = "[0-9]{4}年([1-9]|1[0-2])月([1-9]|[1-2][0-9]|3[0-1])日";
             createDate.SetBody(datePattern);
             organization.SetBody("");
@@ -133,6 +149,8 @@ namespace Generator
             enName.SetBody("");
             shortName.SetBody("");
             joinDate.SetBody(datePattern);
+            date.SetBody(datePattern);
+            document.SetBody("");
         }
 
         public static void Process(XmlElement e)
@@ -177,7 +195,7 @@ namespace Generator
 
                 if (iChild >= children.Count)
                 {
-                    throw new XmlException($"unknown element <{childNode.Name}> in <{Name}>");
+                    throw new XmlException($"unknown element <{childNode.Name}> in <{Name}>[{position}]");
                 }
 
                 var validateNode = children[iChild];
