@@ -135,8 +135,14 @@ namespace Generator
             {
                 Required = true,
             });
-            deprecated.AddChild(new ValidatorChild(notice));
-            deprecated.AddChild(new ValidatorChild(noticeId));
+            deprecated.AddChild(new ValidatorChild(notice)
+            {
+                Required = false,
+            });
+            deprecated.AddChild(new ValidatorChild(noticeId)
+            {
+                Required = false,
+            });
             deprecated.AddChild(new ValidatorChild(document)
             {
                 Required = false

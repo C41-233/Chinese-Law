@@ -1,17 +1,17 @@
 <document>
 	<histories>
 		<revision>
-			<notice-date>1985年2月8日</notice-date>
+			<create-date>1985年2月8日</create-date>
 			<organization>国务院</organization>
-			<execute-date>1985年1月1日</execute-date>
 			<id>国发〔1985〕19号</id>
+			<execute-date>1985年1月1日</execute-date>
 		</revision>
 		<amendment>
-			<notice-date>2011年1月8日</notice-date>
+			<create-date>2011年1月8日</create-date>
 			<organization>国务院</organization>
-			<execute-date>1985年1月1日</execute-date>
 			<id>国务院令第588号</id>
 			<notice>国务院关于废止和修改部分行政法规的决定</notice>
+			<execute-date>1985年1月1日</execute-date>
 		</amendment>
 	</histories>
 	<deprecated>
