@@ -1,5 +1,4 @@
 <document>
-	<category id="法律"/>
 	<histories>
 		<revision>
 			<create-date>1979年7月1日</create-date>
@@ -9,22 +8,22 @@
 		<amendment>
 			<create-date>1996年3月17日</create-date>
 			<organization>第八届全国人民代表大会第四次会议</organization>
-			<notice>全国人民代表大会关于修改〈中华人民共和国刑事诉讼法〉的决定</notice>
 			<id>八届主席令第六十四号</id>
+			<notice>全国人民代表大会关于修改〈中华人民共和国刑事诉讼法〉的决定</notice>
 			<execute-date>1996年3月17日</execute-date>
 		</amendment>
 		<amendment>
 			<create-date>2012年3月14日</create-date>
 			<organization>第十一届全国人民代表大会第五次会议</organization>
-			<notice>全国人民代表大会关于修改〈中华人民共和国刑事诉讼法〉的决定</notice>
 			<id>十一届主席令第五十五号</id>
+			<notice>全国人民代表大会关于修改〈中华人民共和国刑事诉讼法〉的决定</notice>
 			<execute-date>2012年3月14日</execute-date>
 		</amendment>
 		<amendment>
 			<create-date>2018年10月26日</create-date>
 			<organization>第十三届全国人民代表大会常务委员会第六次会议</organization>
-			<notice>全国人民代表大会常务委员会关于修改〈中华人民共和国刑事诉讼法〉的决定</notice>
 			<id>十三届主席令第十号</id>
+			<notice>全国人民代表大会常务委员会关于修改〈中华人民共和国刑事诉讼法〉的决定</notice>
 			<execute-date>2018年10月26日</execute-date>
 		</amendment>
 	</histories>
