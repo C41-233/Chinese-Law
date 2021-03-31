@@ -1,0 +1,23 @@
+<document>
+	<histories>
+		<revision>
+			<create-date>1991年12月29日</create-date>
+			<organization>第七届全国人民代表大会常务委员会第二十三次会议</organization>
+			<notice-date>1991年12月29日</notice-date>
+			<id>七届主席令第五十四号</id>
+			<execute-date>1992年4月1日</execute-date>
+		</revision>
+		<amendment>
+			<create-date>1998年11月4日</create-date>
+			<organization>第九届全国人民代表大会常务委员会第五次会议</organization>
+			<notice-date>1998年11月4日</notice-date>
+			<id>九届主席令第十号</id>
+			<notice>全国人民代表大会常务委员会关于修改《中华人民共和国收养法》的决定</notice>
+			<execute-date>1999年4月1日</execute-date>
+		</amendment>
+	</histories>
+	<deprecated>
+		<date>2021年1月1日</date>
+		<document>中华人民共和国民法典</document>
+	</deprecated>
+</document>
