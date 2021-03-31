@@ -1,0 +1,29 @@
+<document>
+	<histories>
+		<revision>
+			<create-date>1950年4月13日</create-date>
+			<organization>中央人民政府委员会第七次会议</organization>
+			<notice-date>1950年5月1日</notice-date>
+			<execute-date>1950年5月1日</execute-date>
+		</revision>
+		<revision>
+			<create-date>1980年9月10日</create-date>
+			<organization>第五届全国人民代表大会第三次会议</organization>
+			<notice-date>1980年9月10日</notice-date>
+			<id>第五届全国人民代表大会常务委员会委员长令第9号</id>
+			<execute-date>1981年1月1日</execute-date>
+		</revision>
+		<amendment>
+			<create-date>2001年4月28日</create-date>
+			<organization>第九届全国人民代表大会常务委员会第二十一次会议</organization>
+			<notice-date>2001年4月28日</notice-date>
+			<id>九届主席令第五十一号</id>
+			<notice>全国人民代表大会常务委员会关于修改《中华人民共和国婚姻法》的决定</notice>
+			<execute-date>2001年4月28日</execute-date>
+		</amendment>
+	</histories>
+	<deprecated>
+		<date>2021年1月1日</date>
+		<document>中华人民共和国民法典</document>
+	</deprecated>
+</document>
