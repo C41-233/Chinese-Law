@@ -103,6 +103,8 @@ namespace Generator
                         {
                             return false;
                         }
+
+                        flip = true;
                         break;
                     case '〈':
                         if (flip)
@@ -117,6 +119,8 @@ namespace Generator
                         {
                             return false;
                         }
+
+                        flip = false;
                         break;
                     case '<':
                     case '>':
