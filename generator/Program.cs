@@ -50,6 +50,12 @@ namespace Generator
                 Console.WriteLine($"重复文件{file} {old}");
                 return;
             }
+            var plain = fileInfo.Name.RemoveLast(".xml");
+            if (!CheckName(plain))
+            {
+                Console.WriteLine($"错误的文件{file}");
+                return;
+            }
             names.Add(fileInfo.Name, file);
             if (fileInfo.Length == 0)
             {
@@ -67,5 +73,58 @@ namespace Generator
             }
         }
 
+        private static bool CheckName(string plain)
+        {
+            var stack = new Stack<char>();
+            bool flip = true;
+            foreach (var ch in plain)
+            {
+                switch (ch)
+                {
+                    case '“':
+                        stack.Push(ch);
+                        break;
+                    case '”':
+                        if (stack.Count == 0 || stack.Pop() != '“')
+                        {
+                            return false;
+                        }
+                        break;
+                    case '《':
+                        if (!flip)
+                        {
+                            return false;
+                        }
+                        stack.Push(ch);
+                        flip = false;
+                        break;
+                    case '》':
+                        if (stack.Count == 0 || stack.Pop() != '《')
+                        {
+                            return false;
+                        }
+                        break;
+                    case '〈':
+                        if (flip)
+                        {
+                            return false;
+                        }
+                        stack.Push(ch);
+                        flip = true;
+                        break;
+                    case '〉':
+                        if (stack.Count == 0 || stack.Pop() != '〈')
+                        {
+                            return false;
+                        }
+                        break;
+                    case '<':
+                    case '>':
+                        return false;
+                }
+            }
+
+            return true;
+        }
     }
 }
