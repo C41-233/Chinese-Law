@@ -1,0 +1,24 @@
+<document>
+	<histories>
+		<revision>
+			<create-date>1997年5月9日</create-date>
+			<organization>第八届全国人民代表大会常务委员会第二十五次会议</organization>
+			<notice-date>1997年5月9日</notice-date>
+			<id>八届主席令第八十五号</id>
+			<execute-date>1997年5月9日</execute-date>
+		</revision>
+		<amendment>
+			<create-date>2010年6月25日</create-date>
+			<organization>第十一届全国人民代表大会常务委员会第十五次会议</organization>
+			<notice-date>2010年6月25日</notice-date>
+			<id>十一届主席令第三十一号</id>
+			<notice>全国人民代表大会常务委员会关于修改《中华人民共和国行政监察法》的决定</notice>
+			<execute-date>2010年10月1日</execute-date>
+		</amendment>
+	</histories>
+	<!--废止-->
+	<deprecated>
+		<date>2018年3月20日</date>
+		<document>中华人民共和国监察法</document>
+	</deprecated>
+</document>

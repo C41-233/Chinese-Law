@@ -201,7 +201,13 @@ namespace Generator
             var iChild = 0;
             for (var index = 0; index < element.ChildNodes.Count; )
             {
-                var childNode = (XmlElement) element.ChildNodes[index];
+                var node = element.ChildNodes[index];
+                if (node.NodeType == XmlNodeType.Comment)
+                {
+                    index++;
+                    continue;
+                }
+                var childNode = (XmlElement) node;
 
                 if (iChild >= children.Count)
                 {
